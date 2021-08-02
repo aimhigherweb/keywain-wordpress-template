@@ -30,3 +30,14 @@ const togglePopup = () => {
 		popup.classList.add('open')
 	}
 }
+
+const toggleBooking = () => {
+	const sidebar = document.querySelector('#booking')
+	if(sidebar.classList.contains('open')) {
+		sidebar.classList.remove('open')
+	}
+
+	else {
+		sidebar.classList.add('open')
+	}
+}

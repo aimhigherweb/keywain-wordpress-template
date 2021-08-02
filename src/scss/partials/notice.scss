@@ -1,12 +1,43 @@
 .notice {
 	width: 100vw;
-	margin-top: -20px;
 	margin-left: -20px;
 	padding: 20px;
-	background: rgba(var.$error, 0.5);
+	background: rgba(var.$error, 0.2);
 	text-align: center;
 
 	h2, h3 {
 		color: inherit;
+	}
+
+	a {
+		color: inherit;
+	}
+}
+
+main {
+	.notice {
+		margin-top: -20px;
+	}
+}
+
+@media(min-width: 40em) {
+	.notice {
+		margin-left: -50px;
+	}
+}
+
+@media(min-width: 50em) {
+	main {
+		.notice {
+			margin-top: -70px;
+		}
+	}
+}
+
+$max_width: 1000px * (10/9);
+
+@media(min-width: $max_width) {
+	.notice {
+		margin-left: calc(-1 * (50vw - 500px));
 	}
 }

@@ -1,3 +1,10 @@
+<?php
+
+	WP_Filesystem();
+	global $wp_filesystem;
+
+?>
+
 <footer class="footer">
 	<nav>
 		<ul>

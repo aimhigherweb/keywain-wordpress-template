@@ -12,24 +12,24 @@
 
 	> .wp-block-button.wp-block-button {
 		margin: 10px;
+	}
 
-		a {
-			display: inline-block;
-			padding: 10px 20px;
-			border: 2px solid var.$primary;
-			border-radius: 8px;
-			background: var.$primary;
-			color: var.$white;
-			font-family: var.$font_headings;
-			font-weight: 600;
-			line-height: 1;
-			text-decoration: none;
-			text-transform: uppercase;
+	.wp-block-button__link {
+		display: inline-block;
+		padding: 10px 20px;
+		border: 2px solid var.$primary;
+		border-radius: 8px;
+		background: var.$primary;
+		color: var.$white;
+		font-family: var.$font_headings;
+		font-weight: 600;
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
 
-			&:hover {
-				background: var.$white;
-				color: var.$primary;
-			}
+		&:hover {
+			background: var.$white;
+			color: var.$primary;
 		}
 	}
 }
