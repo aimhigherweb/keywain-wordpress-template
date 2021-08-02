@@ -15,16 +15,14 @@ Version: 1.0.0
 @import './partials/notice.scss';
 @import './partials/popup.scss';
 
+@import './blocks/index.scss';
+
 body {
 	main {
 		@import './partials/gutenberg.scss';
 	}
-}
 
-@import './blocks/index.scss';
-
-body {
 	&.home {
-		@import './layouts/home.scss';
+		// @import './layouts/home.scss';
 	}
 }

@@ -48,15 +48,7 @@
 			/* stylelint-enable declaration-no-important */
 			margin: 0 20px;
 
-			> * {
-				&:first-child {
-					margin-top: 0;
-				}
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
+			@include mixins.child_reset;
 		}
 
 		h1, h2 {

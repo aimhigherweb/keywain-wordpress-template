@@ -2,15 +2,7 @@ main {
 	margin: 0 auto;
 	padding: 20px;
 
-	> * {
-		&:first-child {
-			margin-top: 0;
-		}
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+	@include mixins.child_reset;
 
 	p, h1, h2, h3, h4 {
 		max-width: 800px;
@@ -27,6 +19,14 @@ main {
 			max-width: 400px;
 			max-height: 400px;
 			margin: 0 auto;
+		}
+
+		&.wide {
+			max-width: 1000px;
+
+			img {
+				max-width: 100%;
+			}
 		}
 	}
 }

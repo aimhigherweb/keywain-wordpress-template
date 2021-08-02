@@ -3,6 +3,7 @@
 	font-style: normal;
 	font-weight: 400;
 	src: url('./src/fonts/RobotoSlab-Regular.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
 	font-style: normal;
 	font-weight: 500;
 	src: url('./src/fonts/RobotoSlab-Medium.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
 	font-style: normal;
 	font-weight: 600;
 	src: url('./src/fonts/RobotoSlab-SemiBold.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -24,12 +27,14 @@
 	font-style: normal;
 	font-weight: 700;
 	src: url('./src/fonts/RobotoSlab-Bold.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
 	font-family: 'Roboto Slab';
 	font-style: normal;
 	src: url('./src/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -37,6 +42,7 @@
 	font-style: normal;
 	font-weight: 400;
 	src: url('./src/fonts/Roboto-Regular.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -44,6 +50,7 @@
 	font-style: normal;
 	font-weight: 500;
 	src: url('./src/fonts/Roboto-Medium.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -51,6 +58,7 @@
 	font-style: normal;
 	font-weight: 600;
 	src: url('./src/fonts/Roboto-SemiBold.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -58,12 +66,14 @@
 	font-style: normal;
 	font-weight: 700;
 	src: url('./src/fonts/Roboto-Bold.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
 	font-family: 'Roboto';
 	font-style: normal;
 	src: url('./src/fonts/Roboto-VariableFont_wght.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -71,6 +81,7 @@
 	font-style: italic;
 	font-weight: 400;
 	src: url('./src/fonts/Roboto-RegularItalic.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -78,6 +89,7 @@
 	font-style: italic;
 	font-weight: 500;
 	src: url('./src/fonts/Roboto-MediumItalic.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -85,6 +97,7 @@
 	font-style: italic;
 	font-weight: 600;
 	src: url('./src/fonts/Roboto-SemiBoldItalic.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
@@ -92,10 +105,12 @@
 	font-style: italic;
 	font-weight: 700;
 	src: url('./src/fonts/Roboto-BoldItalic.ttf') format('truetype');
+	font-display: block;
 }
 
 @font-face {
 	font-family: 'Roboto';
 	font-style: italic;
 	src: url('./src/fonts/Roboto-Italic-VariableFont_wght.ttf') format('truetype');
+	font-display: block;
 }

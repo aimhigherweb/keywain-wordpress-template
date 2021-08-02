@@ -12,6 +12,15 @@
 			));
 
 			acf_register_block(array(
+				'name' => 'block_feature',
+				'title' => 'Feature Block',
+				'description' => 'A custom content block',
+				'render_callback' => 'block_feature_render_callback',
+				'category' => 'design',
+				'icon' => 'align-wide',
+			));
+
+			acf_register_block(array(
 				'name' => 'services_block',
 				'title' => 'Services Block',
 				'description' => 'A block to showcase a number of services',
@@ -52,6 +61,10 @@
 
 	function block_standard_render_callback($block) {
 		include(get_theme_file_path('/blocks/standard.php'));
+	}
+
+	function block_feature_render_callback($block) {
+		include(get_theme_file_path('/blocks/feature.php'));
 	}
 
 	function services_block_render_callback($block) {
