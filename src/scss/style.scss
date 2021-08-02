@@ -1,0 +1,28 @@
+/*
+Theme Name: Keywain
+Version: 1.0.0
+*/
+
+@use './variables.scss' as var;
+@use './mixins.scss';
+
+@import './global/index.scss';
+
+@import './partials/layout.scss';
+@import './partials/header.scss';
+@import './partials/footer.scss';
+@import './partials/content.scss';
+@import './partials/notice.scss';
+@import './partials/popup.scss';
+
+main {
+	@import './partials/gutenberg.scss';
+}
+
+@import './blocks/index.scss';
+
+body {
+	&.home {
+		@import './layouts/home.scss';
+	}
+}

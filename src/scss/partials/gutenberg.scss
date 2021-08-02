@@ -1,0 +1,24 @@
+.wp-block-columns {
+	display: block;
+
+	.wp-block-column {
+		margin: 0;
+	}
+}
+
+@media(min-width: 40em) {
+	.wp-block-columns {
+		display: flex;
+		width: calc(100% + 40px);
+		margin: 0 -20px;
+
+		.wp-block-column {
+
+			/* stylelint-disable declaration-no-important */
+			flex-basis: 42% !important;
+
+			/* stylelint-enable declaration-no-important */
+			margin: 0 20px;
+		}
+	}
+}

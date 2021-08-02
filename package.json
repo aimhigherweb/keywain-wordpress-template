@@ -1,0 +1,22 @@
+{
+  "name": "keywain",
+  "version": "1.0.0",
+  "author": "AimHigher Web <webmaster@aimhigherweb.design> (https://aimhigherweb.design)",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "gulp serve",
+    "build": "gulp sass"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.4",
+    "dotenv": "^10.0.0",
+    "gulp": "^4.0.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-property-sort-order-smacss": "^7.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
+  }
+}

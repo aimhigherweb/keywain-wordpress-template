@@ -1,0 +1,67 @@
+.popup {
+	display: flex;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	background: var.$primary;
+	color: var.$secondary;
+
+	svg {
+		height: 2em;
+		color: inherit;
+	}
+}
+
+.notice_popup {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	width: 90vw;
+	max-width: 400px;
+	height: 90vh;
+	max-height: 600px;
+	padding: 50px 20px;
+	transform: translateX(-50%) translateY(-50%);
+
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: -5;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: var.$white;
+	}
+
+	&:after {
+		content: '';
+		position: fixed;
+		z-index: -10;
+		top: 50%;
+		left: 50%;
+		width: 100vw;
+		height: 100vh;
+		transform: translateX(-50%) translateY(-50%);
+		opacity: 0.7;
+		background: var.$black;
+	}
+
+	&.open {
+		display: block;
+	}
+
+	.popup {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		bottom: auto;
+	}
+}

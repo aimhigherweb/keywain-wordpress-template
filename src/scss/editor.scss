@@ -1,0 +1,44 @@
+/* Custom Editor Styles */
+@use './variables.scss' as var;
+@use './mixins.scss';
+
+@import './global/fonts.scss';
+@import './global/typography.scss';
+@import './global/forms.scss';
+
+@import './blocks/index.scss';
+
+.block-editor-writing-flow {
+	color: var.$neutral;
+	font-family: var.$font_main;
+	font-size: 18px;
+	line-height: 1.5;
+
+	.editor-post-title {
+		.editor-post-title__input {
+			color: var.$primary;
+			font-family: var.$font_headings;
+			font-size: 3.22em;
+			font-weight: 400;
+			line-height: 1.2;
+			text-transform: uppercase;
+		}
+	}
+
+	.wp-block {
+		&[data-type='acf/logos-block'], &[data-type='acf/services-block'], &[data-type='acf/block-standard'] {
+			.acf-editor-wrap {
+				iframe {
+					min-height: unset;
+					max-height: 150px;
+				}
+			}
+		}
+	}
+
+	.button-primary {
+		padding: 5px 10px;
+		background: var.$primary;
+		color: var.$white;
+	}
+}

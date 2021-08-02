@@ -1,0 +1,12 @@
+.notice {
+	width: 100vw;
+	margin-top: -20px;
+	margin-left: -20px;
+	padding: 20px;
+	background: rgba(var.$error, 0.5);
+	text-align: center;
+
+	h2, h3 {
+		color: inherit;
+	}
+}

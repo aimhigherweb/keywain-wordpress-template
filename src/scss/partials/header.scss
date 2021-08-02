@@ -1,0 +1,181 @@
+.header {
+	display: flex;
+	position: relative;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	border-bottom: 10px solid var.$primary;
+	background: var.$white;
+	color: var.$secondary;
+	font-family: var.$font_headings;
+
+	.logo {
+		display: block;
+		width: 200px;
+		margin-right: auto;
+
+		img, svg {
+			max-width: 100%;
+		}
+
+		&:hover {
+			outline: 3px solid var.$primary;
+		}
+	}
+
+	nav {
+		position: relative;
+		z-index: 50;
+		font-size: 1.8em;
+		font-weight: 600;
+		text-align: center;
+
+		&.open {
+			ul {
+				display: block;
+			}
+		}
+
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 90vw;
+			max-width: 400px;
+			background: var.$white;
+			color: var.$primary;
+		}
+
+		a {
+			padding: 20px;
+
+			&:hover {
+				background: var.$primary;
+				color: var.$white;
+				text-decoration: none;
+			}
+
+			.label {
+				position: static;
+				margin-left: 1ch;
+			}
+		}
+
+		li {
+			&.current_page_item {
+				background: var.$secondary;
+				color: var.$white;
+			}
+		}
+	}
+}
+
+.hamburger {
+	margin: 0;
+	border: 2px solid transparent;
+	background: none;
+	color: inherit;
+
+	svg {
+		width: auto;
+		height: 60px;
+	}
+
+	&:hover {
+		background: var.$primary;
+		color: var.$white;
+	}
+}
+
+nav {
+	svg {
+		height: 1em;
+		color: inherit;
+	}
+}
+
+@media(min-width: 50em) {
+	.header {
+		margin-bottom: 50px;
+		padding: 50px 20px;
+
+		.logo {
+			flex-shrink: 1;
+		}
+
+		.background {
+			svg {
+				bottom: -50px;
+				height: 400px;
+			}
+		}
+
+		nav {
+			flex-shrink: 0;
+			font-size: 1em;
+			font-weight: 500;
+
+			&.open {
+				ul {
+					display: flex;
+				}
+			}
+
+			ul {
+				display: flex;
+				position: static;
+				align-items: center;
+				width: auto;
+				max-width: unset;
+				background: transparent;
+				color: var.$primary;
+			}
+
+			a {
+				padding: 10px;
+
+				.label {
+					position: absolute;
+					right: -100vw;
+				}
+			}
+
+			li {
+				margin-left: 10px;
+				border-bottom: 2px solid transparent;
+
+				&.current_page_item {
+					border-color: var.$white;
+					background: transparent;
+					color: var.$white;
+				}
+			}
+		}
+	}
+
+	.hamburger {
+		display: none;
+	}
+}
+
+@media(min-width: 60em) {
+	.header {
+		width: 100vw;
+		margin: 0 auto 50px;
+		padding: 50px 5vw;
+
+		nav {
+			font-size: 1.2em;
+		}
+	}
+}
+
+$max_width: 1200px * (10/9);
+
+@media(min-width: $max_width) {
+	.header {
+		padding: 50px calc(50vw - 600px);
+	}
+}
