@@ -50,6 +50,17 @@
 					),
 				),
 				array(
+					'key' => 'aimhigher_business_info_field_email',
+					'label' => 'Email Address',
+					'name' => 'email',
+					'type' => 'text',
+					'wrapper' => array(
+						'width' => '51',
+						'class' => '',
+						'id' => '',
+					),
+				),
+				array(
 					'key' => 'aimhigher_business_info_field_address',
 					'label' => 'Address',
 					'name' => 'address',

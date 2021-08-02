@@ -28,8 +28,14 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+h1, h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
 h3, h4, h5 {
 	color: var.$secondary;
+	text-transform: uppercase;
 }
 
 nav {
@@ -52,12 +58,12 @@ nav {
 	}
 }
 
-.btn {
+.btn, button {
 	display: inline-block;
 	margin: 20px auto;
 	padding: 10px 20px;
 	border: 2px solid var.$primary;
-	border-radius: 2em;
+	border-radius: 8px;
 	background: var.$primary;
 	color: var.$white;
 	font-family: var.$font_headings;

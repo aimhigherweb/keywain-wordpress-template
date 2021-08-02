@@ -1,23 +1,32 @@
 main {
+	margin: 0 auto;
 	padding: 20px;
 
-	.form_block {
-		&:last-child {
-			position: relative;
-			padding-top: 20px;
+	> * {
+		&:first-child {
+			margin-top: 0;
+		}
 
-			&:before {
-				content: '';
-				position: absolute;
-				z-index: -1;
-				top: 0;
-				bottom: -300px;
-				left: 50%;
-				width: 100vw;
-				transform: translateX(-50%);
-				opacity: 0.3;
-				background: var.$primary;
-			}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	p, h1, h2, h3, h4 {
+		max-width: 800px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.wp-block-image {
+		margin: 20px auto;
+
+		img {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			max-height: 400px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -25,23 +34,6 @@ main {
 @media(min-width: 40em) {
 	main {
 		padding: 20px 50px;
-
-		.form_block {
-			&:last-child {
-				padding-top: 50px
-			}
-		}
-	}
-}
-
-@media(min-width: 50em) {
-	main {
-		.form_block {
-			&:last-child {
-				padding-top: 100px;
-				padding-bottom: 50px;
-			}
-		}
 	}
 }
 
@@ -51,24 +43,5 @@ main {
 		max-width: 1000px;
 		margin: 50px auto;
 		padding: 20px 0;
-
-		.form_block {
-			&:last-child {
-				&::before {
-					bottom: -500px;
-				}
-			}
-		}
-	}
-}
-
-@media(min-width: 70em) {
-	main {
-		.form_block {
-			&:last-child {
-				margin-top: 100px;
-				padding-bottom: 0;
-			}
-		}
 	}
 }
