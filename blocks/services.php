@@ -19,12 +19,10 @@
 				echo '<ul class="blocks">';
 			
 				while( have_rows('services') ) : the_row(); ?>
+				
 			
 				<li class="service">
-					<img 
-						src="<?php echo get_sub_field('image')['sizes']['block_image_small']; ?>" 
-						alt="" 
-					/>
+					<?php echo $wp_filesystem->get_contents(get_sub_field('image')['url']); ?>
 					<h3><?php echo get_sub_field('heading'); ?></h3>
 					<p class="sub"><?php echo get_sub_field('sub_heading'); ?></p>
 					<div class="content"><?php echo get_sub_field('content'); ?></div>

@@ -41,4 +41,11 @@
 		background: var.$primary;
 		color: var.$white;
 	}
+
+	.mce-toolbar {
+		button {
+			background: transparent;
+			color: var.$neutral;
+		}
+	}
 }
