@@ -7,6 +7,17 @@
  * @version 1.0
  */
 
-	get_template_part('partials/layout');
+	if($wp_query->is_posts_page) {
+		get_template_part(
+			'partials/layout', 
+			null, 
+			array(
+				'template' => 'blog',
+			)
+		);
+	}
+	else {
+		get_template_part('partials/layout');
+	}
 
 ?>

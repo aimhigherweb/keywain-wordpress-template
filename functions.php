@@ -41,7 +41,7 @@
     // Custom Image Sizes
     add_image_size( 'block_image', 500, 420, array( 'center', 'center' ) );
     add_image_size( 'block_image_small', 250, 210, array( 'center', 'center' ) );
-    add_image_size( 'logos', 300, 300, false );
+    add_image_size( 'med_square', 300, 300, false );
 
     // Add Options Page
     if( function_exists('acf_add_options_page') ) {
