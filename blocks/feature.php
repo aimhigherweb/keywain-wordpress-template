@@ -3,8 +3,6 @@
  * Block Name: Feature Block
  * 
  */
-	global $wp_filesystem;
-
 	$cta = get_field('cta');
 
 ?>

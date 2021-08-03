@@ -39,6 +39,7 @@
 		bottom: 0;
 		left: 0;
 		background: var.$white;
+		box-shadow: 0 1px 3px rgba(var.$neutral, 0.15), 0 0 8px rgba(var.$neutral, 0.1);
 	}
 
 	&:after {

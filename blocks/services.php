@@ -3,7 +3,6 @@
  * Block Name: Services Block
  * 
  */
-	global $wp_filesystem;
 
 	$cta = get_field('cta');
 
@@ -22,7 +21,7 @@
 				
 			
 				<li class="service">
-					<?php echo $wp_filesystem->get_contents(get_sub_field('image')['url']); ?>
+					<?php echo wp_remote_retrieve_body(wp_remote_get(get_sub_field('image')['url'])); ?>
 					<h3><?php echo get_sub_field('heading'); ?></h3>
 					<p class="sub"><?php echo get_sub_field('sub_heading'); ?></p>
 					<div class="content"><?php echo get_sub_field('content'); ?></div>

@@ -1,7 +1,4 @@
 <?php
-
-	global $wp_filesystem;
-
 	$logo = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ), 'full')[0];
 	$phone = get_field('phone', 'option');
 
@@ -11,7 +8,7 @@
 	<a class="logo" href="/">
 		<?php 
 			if(preg_match('/\.svg$/', $logo)) {
-				echo $wp_filesystem->get_contents($logo);
+				echo wp_remote_retrieve_body(wp_remote_get($logo));
 			} 
 			else {
 				echo '<img src="' . $logo . '" />';
@@ -22,7 +19,7 @@
 	
 	<nav class="main">
 		<button class="hamburger" onclick="toggleMenu()">
-			<?php echo $wp_filesystem->get_contents(get_template_directory_uri() . '/src/img/hamburger.svg'); ?>
+			<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/hamburger.svg')); ?>
 			<span class="sr-only">Toggle Main Menu</span>
 		</button>
 		<ul>

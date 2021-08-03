@@ -3,8 +3,6 @@
  * Block Name: Address Block
  * 
  */
-	global $wp_filesystem;
-
 	$address = get_field('address', 'option');
 	$phone = get_field('phone', 'option');
 	$email = get_field('email', 'option');

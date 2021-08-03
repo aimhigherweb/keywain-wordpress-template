@@ -3,8 +3,6 @@
  * Block Name: Standard Block
  * 
  */
-	global $wp_filesystem;
-
 	$cta = get_field('cta');
 
 ?>

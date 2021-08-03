@@ -8,10 +8,7 @@
  */
 
 	require_once ( ABSPATH . '/wp-admin/includes/file.php' );
-
-	WP_Filesystem();
-	global $wp_filesystem;
-
+	
 	$template = 'default';
 	$class = '';
 
