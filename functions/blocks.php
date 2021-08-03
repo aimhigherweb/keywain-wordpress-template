@@ -55,6 +55,15 @@
 				'category' => 'design',
 				'icon' => 'id-alt',
 			));
+
+			acf_register_block(array(
+				'name' => 'last_updated',
+				'title' => 'Last Updated',
+				'description' => 'A block to display last updated date',
+				'render_callback' => 'last_updated_block_render_callback',
+				'category' => 'design',
+				'icon' => 'calendar-alt',
+			));
 		}
 	}
 	add_action('acf/init', 'my_acf_init');
@@ -81,6 +90,10 @@
 
 	function team_block_render_callback($block) {
 		include(get_theme_file_path('/blocks/team.php'));
+	}
+
+	function last_updated_block_render_callback($block) {
+		include(get_theme_file_path('/blocks/last_updated.php'));
 	}
 
 ?>
