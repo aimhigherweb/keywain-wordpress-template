@@ -50,6 +50,34 @@
 	}
 }
 
+.pagination {
+	.nav-links {
+		display: flex;
+		justify-content: center;
+	}
+
+	.page-numbers {
+		display: block;
+		min-width: 44px;
+		margin: 10px;
+		padding: 10px;
+		border: 2px solid transparent;
+		border-radius: 12px;
+		text-align: center;
+
+		&.current {
+			border-color: var.$primary;
+			background: var.$primary;
+			color: var.$white;
+		}
+
+		&:hover {
+			border-color: var.$primary;
+			text-decoration: none;
+		}
+	}
+}
+
 @media(min-width: 40em) {
 	.post {
 		position: relative;

@@ -1,7 +1,10 @@
 <?php
 
-$page = get_option('page_for_posts');
-$page_data = get_page($page);
+
+	$page = get_option('page_for_posts');
+	$page_data = get_page($page);
+	
+	
 
 ?>
 
@@ -27,7 +30,10 @@ $page_data = get_page($page);
 			</li>
 
 		<?php endwhile;
+
 	
-	echo '</ul>';
+	echo '</ul>'; 
+	
+	echo get_the_posts_pagination();
 
 endif; ?>
