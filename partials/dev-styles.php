@@ -13,11 +13,6 @@
 		text-align: center;
 	}
 
-	header, main, body, .block {
-		outline: 1px solid lightgrey;
-		outline-offset: 0;
-	}
-
 	@media(min-width: 30em) {
 		body::before {
 			content: '30em';
