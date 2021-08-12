@@ -3,10 +3,6 @@
 	padding: 0;
 	list-style: none;
 	text-align: center;
-
-	h2 {
-		text-align: left;
-	}
 }
 
 .post {
@@ -16,6 +12,11 @@
 	padding: 20px;
 	border: 3px solid var.$grey;
 	text-align: left;
+
+	h2 {
+		margin-top: 0;
+		text-align: left;
+	}
 
 	&:hover {
 		border-color: var.$primary;

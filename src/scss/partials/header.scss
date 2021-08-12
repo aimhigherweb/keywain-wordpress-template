@@ -27,29 +27,41 @@
 	nav {
 		position: relative;
 		z-index: 50;
-		font-size: 1.8em;
+		font-size: 1.4em;
 		font-weight: 600;
 		text-align: center;
 
 		&.open {
-			ul {
+			ul:not(.sub-menu) {
 				display: block;
 			}
 		}
 
 		ul {
+			color: var.$primary;
+		}
+
+		ul:not(.sub-menu) {
 			display: none;
 			position: absolute;
+			z-index: 150;
 			top: 100%;
 			right: 0;
 			width: 90vw;
 			max-width: 400px;
+			max-height: calc(100vh - 150px);
+			overflow-y: auto;
+			border-radius: 12px;
 			background: var.$white;
-			color: var.$primary;
+			box-shadow: 0 1px 3px rgba(var.$neutral, 0.15), 0 0 8px rgba(var.$neutral, 0.1);
+		}
+
+		.sub-menu {
+			font-size: 0.6em;
 		}
 
 		a {
-			padding: 20px;
+			padding: 0.6em;
 
 			&:hover {
 				background: var.$primary;
@@ -114,27 +126,64 @@ nav {
 
 		nav {
 			flex-shrink: 0;
-			font-size: 1em;
+			font-size: 0.8em;
 			font-weight: 500;
 
 			&.open {
-				ul {
+				ul:not(.sub-menu) {
 					display: flex;
 				}
 			}
 
 			ul {
+				color: var.$primary;
+			}
+
+			ul:not(.sub-menu) {
 				display: flex;
 				position: static;
 				align-items: center;
 				width: auto;
 				max-width: unset;
+				overflow: visible;
 				background: transparent;
-				color: var.$primary;
+				box-shadow: none;
+			}
+
+			li {
+				position: relative;
+
+				&:hover {
+					.sub-menu {
+						display: block;
+					}
+				}
+			}
+
+			.sub-menu {
+				display: none;
+				position: absolute;
+				top: 100%;
+				width: 200px;
+				max-width: max-content;
+				background: var.$white;
+				box-shadow: 0 1px 3px rgba(var.$neutral, 0.15), 0 0 8px rgba(var.$neutral, 0.1);
+				font-size: 1em;
+				text-align: left;
+
+				li {
+
+					margin: 0;
+				}
+
+				a {
+					max-width: 200px;
+					padding: 0.5em 1em;
+				}
 			}
 
 			a {
-				padding: 10px;
+				padding: 0.5em;
 
 				.label {
 					position: absolute;
@@ -166,6 +215,14 @@ nav {
 		margin: 0 auto 50px;
 		padding: 50px 5vw;
 
+		nav {
+			font-size: 1em;
+		}
+	}
+}
+
+@media(min-width: 70em) {
+	.header {
 		nav {
 			font-size: 1.2em;
 		}
