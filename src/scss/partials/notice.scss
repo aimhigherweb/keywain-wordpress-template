@@ -3,6 +3,7 @@
 	margin-left: -20px;
 	padding: 20px;
 	background: rgba(var.$error, 0.2);
+	color: var.$neutral;
 	text-align: center;
 
 	h2, h3 {
@@ -30,6 +31,15 @@ main {
 	main {
 		.notice {
 			margin-top: -70px;
+			padding-right: 300px;
+		}
+	}
+}
+
+@media(min-width: 80em) {
+	main {
+		.notice {
+			padding-right: 0;
 		}
 	}
 }

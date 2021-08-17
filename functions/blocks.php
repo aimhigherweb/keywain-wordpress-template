@@ -63,6 +63,10 @@
 				'render_callback' => 'last_updated_block_render_callback',
 				'category' => 'design',
 				'icon' => 'calendar-alt',
+				'mode' => 'edit',
+				'supports' => [
+					'mode' => false
+				]
 			));
 		}
 	}

@@ -11,7 +11,7 @@ const toggleMenu = () => {
 
 const togglePopup = (popupID, auto) => {
 	const popup = document.querySelector(`#${popupID}`)
-	const lastUpdated = popup.querySelector('.last-updated time').dataset.date
+	const lastUpdated = popup.querySelector('.last-updated time')?.dataset?.date
 	let prevView = window.localStorage.getItem('popupNotice')
 	const trigger = () => {
 		if(popup.classList.contains('open')) {
@@ -27,6 +27,12 @@ const togglePopup = (popupID, auto) => {
 			lastUpdated: lastUpdated
 		}))
 
+		return
+	}
+
+	if(!lastUpdated) {
+		console.log('Last Updated Date not there')
+		trigger()
 		return
 	}
 
@@ -51,9 +57,17 @@ const togglePopup = (popupID, auto) => {
 	}
 
 	return
-	
 }
 
 window.onload = () => {
 	togglePopup('popup', true)
+
+	document.addEventListener('scroll', () => {
+		if(window.scrollY > 300) {
+			document.querySelector('#booking')?.classList.add('fixed')
+		}
+		else {
+			document.querySelector('#booking')?.classList.remove('fixed')
+		}
+	});
 }

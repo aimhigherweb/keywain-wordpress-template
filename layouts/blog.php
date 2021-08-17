@@ -24,7 +24,7 @@
 			<div class="content">
 				<?php echo get_the_excerpt(); ?>
 			</div>
-				<a href="" class="block_link">
+				<a href="<?php echo get_the_permalink(); ?>" class="block_link">
 					<span class="sr-only">Read full article <?php echo get_the_title(); ?></span>
 				</a>
 			</li>

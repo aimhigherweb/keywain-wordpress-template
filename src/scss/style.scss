@@ -16,6 +16,7 @@ Version: 1.0.0
 @import './partials/popup.scss';
 @import './partials/booking.scss';
 @import './layouts/blog.scss';
+@import './layouts/post.scss';
 
 @import './blocks/index.scss';
 
@@ -23,8 +24,6 @@ body {
 	main {
 		@import './partials/gutenberg.scss';
 	}
-
-	&.home {
-		// @import './layouts/home.scss';
-	}
 }
+
+@import './global/themes.scss';

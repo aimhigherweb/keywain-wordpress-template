@@ -1,0 +1,253 @@
+body {
+	&[class*='theme_'] {
+		.notice {
+			h2, h3 {
+				color: inherit;
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+}
+
+.theme_blue {
+	$primary: var.$blue;
+	$secondary: var.$navy;
+
+	*:focus {
+		outline-color: $secondary;
+	}
+
+	a {
+		color: $secondary;
+	}
+
+	h1, h2, h3, h4, h5 {
+		color: $primary;
+	}
+
+	h3, h4, h5 {
+		color: $secondary;
+	}
+
+	.btn, button {
+		border: 2px solid $primary;
+		background: $primary;
+
+		&:hover {
+			background: var.$white;
+			color: $primary;
+		}
+	}
+
+	form {
+		input, textarea, select {
+			&[type='checkbox'], &[type='radio'] {
+				& + label {
+					&:before {
+
+						border: 1px solid $primary;
+					}
+
+					&:after {
+						background: $primary;
+					}
+				}
+			}
+		}
+
+		button, input {
+			&[type='submit'] {
+				border: 2px solid $primary;
+				background: $primary;
+
+				&:hover, &:focus {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.wpforms-title {
+		color: $primary;
+	}
+
+	.header {
+		border-bottom-color: $primary;
+		color: $secondary;
+
+		.logo {
+			&:hover {
+				outline-color: $primary;
+			}
+		}
+
+		nav {
+			ul {
+				color: $primary;
+			}
+
+			a {
+				&:hover {
+					background: $primary;
+				}
+			}
+
+			li {
+				&.current_page_item {
+					background: $secondary;
+				}
+			}
+		}
+	}
+
+	.hamburger {
+		border-color: transparent;
+		background: none;
+
+		&:hover {
+			background: $primary;
+			color: var.$white;
+		}
+	}
+
+	.logos {
+		h2 {
+			color: $secondary;
+		}
+
+		.cta {
+			border-color: $secondary;
+			background: $secondary;
+			color: $primary;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+
+	.service {
+		&:hover {
+			border-color: $primary;
+		}
+
+		svg {
+			color: $primary;
+		}
+
+		.block_link {
+			&:focus {
+				&:before {
+					outline-color: $primary;
+				}
+			}
+		}
+	}
+
+	.profile {
+		.role {
+			color: $primary;
+		}
+	}
+
+	.post {
+		&:hover {
+			border-color: $primary;
+
+			img {
+				border-color: $primary;
+			}
+		}
+	}
+
+	.tags {
+		a {
+			color: $primary;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+
+	.block_link {
+		&:focus {
+			&:before {
+				outline-color: $primary;
+			}
+		}
+	}
+
+	.pagination {
+		.page-numbers {
+			&.current {
+				border-color: $primary;
+				background: $primary;
+			}
+
+			&:hover {
+				border-color: $primary;
+			}
+		}
+	}
+
+	.footer {
+		border-top-color: $primary;
+		background: $secondary;
+
+		a {
+			color: var.$white;
+
+			svg {
+
+				fill: $primary;
+			}
+
+			&:hover {
+				color: $primary;
+
+				svg {
+					fill: var.$white;
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.wp-block-buttons {
+		.wp-block-button__link {
+
+			border-color: $primary;
+			background: $primary;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	@media(min-width: 40em) {
+		.post {
+			&:nth-child(2n) {
+				&:hover {
+					img {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+
+	@media(min-width: 50em) {
+		.header {
+			nav {
+				ul {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

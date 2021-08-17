@@ -60,7 +60,10 @@
 	<body class="<?php echo $class . ' theme_' . $colour; ?>">
 		<?php get_template_part('partials/header'); ?>
 
-		<main id="main">
+		<main 
+			id="main" 
+			<?php if(is_active_sidebar('booking')) {echo 'data-booking';} ?>
+		>
 			<?php if (is_active_sidebar('notice')) : ?>
 				<div class="notice">
 					<?php dynamic_sidebar('notice'); ?>

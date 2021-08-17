@@ -7,7 +7,7 @@
     }
 
     //Custom Login Logo
-    function my_login_logo_one() { 
+    function my_custom_login_logo() { 
         ?> 
         <style type="text/css"> 
             body.login div#login h1 a {
@@ -19,7 +19,7 @@
             } 
         </style>
         <?php 
-    } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+    } add_action( 'login_enqueue_scripts', 'my_custom_login_logo' );
 
     //Upload logo to customise area
     function custom_logo_setup() {
@@ -205,4 +205,21 @@
         $wp_admin_bar->remove_menu('comments');
     }
     add_action( 'wp_before_admin_bar_render', 'aimhigher_admin_bar_render' );
+
+    // Check that field has value
+    function check_field_value($fields) {
+        $exists = true;
+        foreach($fields as $field) {
+            if(
+                !$field // Field doesn't exists
+                || $field == '' // Field is empty string
+                || count($field) == 0 // Field is empty array
+            ) {
+                $exists = false;
+                break;
+            }
+        }
+
+        return $exists;
+    }
 ?>
