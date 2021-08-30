@@ -14,7 +14,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // exit if accessed directly
 if( ! defined( 'ABSPATH' ) ) exit;
 
-
 // check if class already exists
 if( !class_exists('aimhigher_acf_plugin_icon_select') ) :
 
@@ -86,6 +85,12 @@ class aimhigher_acf_plugin_icon_select {
 
 // initialize
 new aimhigher_acf_plugin_icon_select();
+
+// Full Path of selected icon
+function icon_path($icon, $icon_path = '/src/img/icons') {
+	
+	return get_template_directory_uri() . $icon_path . '/' . $icon . '.svg';
+}
 
 
 // class_exists check

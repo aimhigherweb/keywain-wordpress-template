@@ -26,7 +26,8 @@ const buildFolders = [
 	'src',
 	'blocks',
 	'layouts',
-	'partials'
+	'partials',
+	'acf'
 ]
 
 gulp.task('sass', () => {
