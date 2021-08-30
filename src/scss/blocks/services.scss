@@ -28,21 +28,21 @@
 }
 
 .service {
+	@include mixins.animate_border(var.$grey, var.$primary);
+
 	position: relative;
 	max-width: 300px;
 	margin: 25px auto;
 	padding: 20px;
-	border: 1px solid var.$grey;
+	overflow: hidden;
 	border-radius: 12px;
 	background: var.$white;
+	color: var.$grey;
 	text-align: center;
-
-	&:hover {
-		border-color: var.$primary;
-	}
 
 	svg {
 		width: 80px;
+		height: auto;
 		margin: 0 auto;
 		color: var.$primary;
 
@@ -53,6 +53,22 @@
 
 	h3 {
 		margin: 10px 0;
+	}
+
+	.content {
+		text-align: left;
+
+		ul {
+			max-width: calc(100% - 2ch);
+			margin-left: 2ch;
+		}
+
+		li {
+			max-width: 100%;
+			margin-bottom: 0.25em;
+			padding-left: 1ch;
+			list-style: disc;
+		}
 	}
 
 	.block_link {

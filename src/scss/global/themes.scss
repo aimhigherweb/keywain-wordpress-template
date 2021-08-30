@@ -135,9 +135,7 @@ body {
 	}
 
 	.service {
-		&:hover {
-			border-color: $primary;
-		}
+		@include mixins.animate_border(var.$grey, $primary);
 
 		svg {
 			color: $primary;
@@ -389,9 +387,7 @@ body {
 	}
 
 	.service {
-		&:hover {
-			border-color: $primary;
-		}
+		@include mixins.animate_border(var.$grey, $primary);
 
 		svg {
 			color: $primary;
