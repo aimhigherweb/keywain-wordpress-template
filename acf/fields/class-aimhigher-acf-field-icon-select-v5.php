@@ -94,17 +94,18 @@ class aimhigher_acf_field_icon_select extends acf_field {
 		$path = '/src/img/icons';
 		$atts  = '';
 		$class = 'acf-icon-select';
+		$field_id = esc_attr($field['id']);
 
 		if($field['icon_path']) {
 			$path = $field['icon_path'];
 		}
 
-		if($field['multiple']) {
-			$atts = 'type="checkbox"';
-		}
-		else {
-			$atts = 'type="radio"';
-		}
+		// if($field['multiple']) {
+		// 	$atts = 'type="checkbox"';
+		// }
+		// else {
+		// 	$atts = 'type="radio"';
+		// }
 
 		$folder = get_template_directory() . $path;
 		$icons = list_files($folder);		
@@ -114,39 +115,47 @@ class aimhigher_acf_field_icon_select extends acf_field {
 		*/
 		
 		?>
+		<div class="acf-icon-select-wrap">
+			<label class="sr-only" for="<?php echo $field_id . '-' . $icon_name; ?>">
+				Select an Icon from the list
+			</label>
+			<input
+				class="field acf-icon-select"
+				data-field_type="icon_select"
+				type="text"
+				list="<?php echo $field_id; ?>-icons"
+				placeholder="Select an icon from the list"
+				value="<?php echo $field['value']; ?>" 
+				name="<?php echo $field['name']; ?>"
+				id="<?php echo $field_id . '-' . $icon_name; ?>"
+				data-path="<?php echo get_template_directory_uri() . $path . '/'; ?>"
+			/>
 
-		<ul>
-			<?php foreach ($icons as $icon): 
-				$icon_path = str_replace($folder, '', $icon);
-				$icon_name = str_replace('.svg', '', $icon_path);
-				$icon_name = preg_replace('/^\//', '', $icon_name);
-				$field_id = esc_attr($field['id']);
+			<datalist class="acf-icon-select" id="<?php echo $field_id; ?>-icons">
+				<?php foreach ($icons as $icon): 
+					$icon_path = str_replace($folder, '', $icon);
+					$icon_name = str_replace('.svg', '', $icon_path);
+					$icon_name = preg_replace('/^\//', '', $icon_name);
 
-				if(strval($icon_name) == strval($field['value'])) {
-					$atts = $atts . ' checked="checked" data-checked="checked"';
-					$class = $class . ' acf-icon-select-selected';
-				}
-
-				?>
-				<li class="<?php echo $class; ?>">
-					<input 
-						class="field"
-						data-field_type="icon_select"
-						<?php echo $atts; ?>
-						value="<?php echo $icon_name; ?>" 
-						name="<?php echo $field['name']; ?>"
-						id="<?php echo $field_id . '-' . $icon_name; ?>"
-					/>
-					<label for="<?php echo $field_id . '-' . $icon_name; ?>">
-						<img 
-							src="<?php echo get_template_directory_uri() . $path . $icon_path; ?>" 
-							alt="<?php echo $icon_name; ?>"
-						/>
-						<span class="sr-only"><?php echo $icon_name; ?></span>
-					</label>
-				</li>
-			<?php endforeach; ?>
-		</ul>
+					?>
+					<option 
+						data-background="<?php echo get_template_directory_uri() . $path . $icon_path; ?>"
+						style="
+							--background_image: url(<?php echo get_template_directory_uri() . $path . $icon_path; ?>);
+						"
+						value="<?php echo $icon_name; ?>"
+						<?php if($icon_name == $field['value']) {echo 'checked';} ?>
+					>
+						<?php echo $icon_name; ?>
+					</option>
+				<?php endforeach; ?>
+			</datalist>
+			<img 
+				class="acf-icon-select-feature"
+				src="<?php echo get_template_directory_uri() . $path . '/' . $field['value'] . '.svg'; ?>"
+			/>
+		</div>
+		
 			
 		<?php
 	}
@@ -174,7 +183,7 @@ class aimhigher_acf_field_icon_select extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script('aimhigher', "{$url}assets/js/input.js", array('acf-input'), $version);
+		wp_register_script('aimhigher', "{$url}assets/input.js", array('acf-input'), $version);
 		wp_enqueue_script('aimhigher');
 		
 		

@@ -16,6 +16,16 @@
 	function initialize_field( $field ) {
 		
 		//$field.doStuff();
+
+		document.querySelectorAll('.field.acf-icon-select').forEach((field) => {
+			field.addEventListener('change', ({target}) => {
+				const image = document.querySelector(`#${target.id} ~ .acf-icon-select-feature`);
+
+				console.log({image, target, id: target.id, selector: `#${target.id} ~ .acf-icon-select-feature`});
+
+				image.src = `${target.dataset?.path}${target.value}.svg`;
+			})
+		})
 		
 	}
 	
@@ -56,6 +66,8 @@
 				
 				// initialize
 				initialize_field( $(this) );
+
+				console.log('field ready')
 				
 			});
 		

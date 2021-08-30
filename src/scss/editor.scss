@@ -68,3 +68,26 @@
 		}
 	}
 }
+
+.acf-icon-select-wrap {
+	display: flex;
+	align-items: center;
+
+	.acf-icon-select-feature {
+		order: -1;
+		width: 150px;
+		height: 150px;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.field {
+		padding: 10px 20px;
+	}
+}
