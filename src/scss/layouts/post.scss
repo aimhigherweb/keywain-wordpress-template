@@ -23,7 +23,6 @@
 	a {
 		display: block;
 
-
 		&:hover {
 			color: var.$secondary;
 			text-decoration: underline;
@@ -47,10 +46,5 @@
 			margin-left: 0;
 			float: left;
 		}
-	}
-
-	h2, h3, h4 {
-		clear: both;
-		overflow: hidden;
 	}
 }

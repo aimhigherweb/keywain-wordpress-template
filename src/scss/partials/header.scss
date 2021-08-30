@@ -60,6 +60,19 @@
 			font-size: 0.6em;
 		}
 
+		.sub {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				display: none;
+				width: 10px;
+				height: auto;
+				margin-left: 1ch;
+			}
+		}
+
 		a {
 			padding: 0.6em;
 
@@ -77,8 +90,10 @@
 
 		li {
 			&.current_page_item {
-				background: var.$secondary;
-				color: var.$white;
+				> a {
+					background: var.$secondary;
+					color: var.$white;
+				}
 			}
 		}
 	}
@@ -88,7 +103,6 @@
 	margin: 0;
 	border: 2px solid transparent;
 	background: none;
-
 
 	svg {
 		width: auto;
@@ -104,6 +118,7 @@
 nav {
 	svg {
 		height: 1em;
+		fill: none;
 		color: inherit;
 	}
 }
@@ -123,6 +138,8 @@ nav {
 				height: 400px;
 			}
 		}
+
+
 
 		nav {
 			flex-shrink: 0;
@@ -179,6 +196,12 @@ nav {
 				a {
 					max-width: 200px;
 					padding: 0.5em 1em;
+				}
+			}
+
+			.sub {
+				svg {
+					display: block;
 				}
 			}
 

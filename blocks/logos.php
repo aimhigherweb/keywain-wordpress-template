@@ -23,11 +23,13 @@
 			<ul>
 				<?php foreach( $logos as $logo ): ?>
 					<li>
-						<img 
-							class="logo"
-							src="<?php echo $logo['sizes']['med_square']; ?>" 
-							alt="<?php echo $logo['title']; ?>"
-						/>
+						<a target="_blank" href="<?php echo $logo['caption']; ?>">
+							<img 
+								class="logo"
+								src="<?php echo $logo['sizes']['med_square']; ?>" 
+								alt="<?php echo $logo['title']; ?>"
+							/>
+						</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
