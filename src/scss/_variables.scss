@@ -12,7 +12,7 @@ $error: $fail;
 
 // Blue Theme
 $blue: #0397d6;
-$navy: #00457c;
+$blue_dark: #00457c;
 
 // Red Theme
 $red: #ab0534;
@@ -21,6 +21,18 @@ $sienna: #4a232e;
 // Default Theme
 $primary: #797a7a;
 $secondary: #a6a6a7;
+
+// Colours Object
+$coloursList: (
+	'blue': $blue,
+	'blue-dark': $blue_dark,
+	'red': $red,
+	'sienna': $sienna,
+	'grey': $grey,
+	'grey-light': $grey_light,
+	'black': $black,
+	'white': $white
+);
 
 $font_headings: 'Roboto Slab', serif;
 $font_main: 'Roboto', sans-serif;

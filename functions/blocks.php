@@ -68,6 +68,16 @@
 					'mode' => false
 				]
 			));
+
+			acf_register_block(array(
+				'name' => 'operating_hours',
+				'title' => 'Operating Hours',
+				'description' => 'A block to display the operating hours',
+				'render_callback' => 'operating_hours_block_render_callback',
+				'category' => 'design',
+				'icon' => 'clock',
+				'mode' => 'edit',
+			));
 		}
 	}
 	add_action('acf/init', 'my_acf_init');
@@ -100,4 +110,7 @@
 		include(get_theme_file_path('/blocks/last_updated.php'));
 	}
 
+	function operating_hours_block_render_callback($block) {
+		include(get_theme_file_path('/blocks/operating_hours.php'));
+	}
 ?>

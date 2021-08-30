@@ -7,6 +7,9 @@
 }
 
 .wp-block-buttons {
+	--background_colour: #{var.$primary};
+	--text_colour: #{var.$white};
+
 	justify-content: center;
 	margin: 0 -10px;
 
@@ -30,6 +33,31 @@
 		&:hover {
 			background: var.$white;
 			color: var.$primary;
+		}
+
+		&.has-text-color {
+			@include mixins.gutenberg_text_colours;
+
+			color: var(--text_colour);
+
+			&:hover {
+				color: var(--background_colour);
+			}
+		}
+
+		&.has-background {
+			@include mixins.gutenberg_backgrounds;
+
+			border-color: var(--background_colour);
+			background-color: var(--background_colour);
+
+			&.has-white-background-color {
+				border-color: var(--text_colour);
+			}
+
+			&:hover {
+				background-color: var(--text_colour);
+			}
 		}
 	}
 }

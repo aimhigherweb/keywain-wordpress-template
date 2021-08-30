@@ -9,27 +9,27 @@
 ?>
 
 <section class="block logos">
-		<h2><?php echo get_field('heading'); ?></h2>
-		<div class="content">
-			<?php echo get_field('content'); ?>
-			<?php
-				if($cta && $cta['text']) {
-					echo '<a href="' . $cta['link'] . '" class="btn cta">' . $cta['text'] . '</a>';
-				}
-			?>
-		</div>
+	<h2><?php echo get_field('heading'); ?></h2>
+	<div class="content">
+		<?php echo get_field('content'); ?>
 		<?php
-			if( $logos ): ?>
-				<ul>
-					<?php foreach( $logos as $logo ): ?>
-						<li>
-							<img 
-								class="logo"
-								src="<?php echo $logo['sizes']['med_square']; ?>" 
-								alt="<?php echo $logo['title']; ?>"
-							/>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-		<?php endif; ?>
+			if($cta && $cta['text']) {
+				echo '<a href="' . $cta['link'] . '" class="btn cta">' . $cta['text'] . '</a>';
+			}
+		?>
+	</div>
+	<?php
+		if( $logos ): ?>
+			<ul>
+				<?php foreach( $logos as $logo ): ?>
+					<li>
+						<img 
+							class="logo"
+							src="<?php echo $logo['sizes']['med_square']; ?>" 
+							alt="<?php echo $logo['title']; ?>"
+						/>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+	<?php endif; ?>
 </section>

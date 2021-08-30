@@ -14,7 +14,7 @@ body {
 
 .theme_blue {
 	$primary: var.$blue;
-	$secondary: var.$navy;
+	$secondary: var.$blue_dark;
 
 	*:focus {
 		outline-color: $secondary;
@@ -230,6 +230,9 @@ body {
 	}
 
 	.wp-block-buttons {
+		--background_colour: #{var.$primary};
+		--text_colour: #{var.$white};
+
 		.wp-block-button__link {
 
 			border-color: $primary;
@@ -482,6 +485,9 @@ body {
 	}
 
 	.wp-block-buttons {
+		--background_colour: #{var.$primary};
+		--text_colour: #{var.$white};
+
 		.wp-block-button__link {
 
 			border-color: $primary;

@@ -213,7 +213,7 @@
             if(
                 !$field // Field doesn't exists
                 || $field == '' // Field is empty string
-                || count($field) == 0 // Field is empty array
+                || (is_array($field)  && count($field) == 0) // Field is empty array
             ) {
                 $exists = false;
                 break;

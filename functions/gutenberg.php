@@ -1,65 +1,66 @@
 <?php
+	$colours = [
+		[
+			'name'  => 'Blue',
+			'slug'  => 'blue',
+			'color' => '#0397d6',
+		],
+		[
+			'name'  => 'Dark Blue',
+			'slug'  => 'blue_dark',
+			'color' => '#00457c',
+		],
+		[
+			'name'  => 'Red',
+			'slug'  => 'red',
+			'color' => '#ab0534',
+		],
+		[
+			'name'  => 'Sienna',
+			'slug'  => 'sienna',
+			'color' => '#4a232e',
+		],
+		[
+			'name'  => 'Grey',
+			'slug'  => 'grey',
+			'color' => '#4c4c4d',
+		],
+		[
+			'name'  => 'Light Grey',
+			'slug'  => 'grey_light',
+			'color' => '#e5e5e5',
+		],
+		[
+			'name'  => 'Black',
+			'slug'  => 'black',
+			'color' => '#000000',
+		],
+		[
+			'name'  => 'White',
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		],
+	];
 
-	// Add global styles to editor
+	// Add Custom Gutenberg config
 	function custom_gutenberg_styles() {
+		global $colours;
+		// Add custom editor styles
 		add_theme_support('editor-styles');
 		add_editor_style('editor.css');
-	}
-	add_action( 'after_setup_theme', 'custom_gutenberg_styles' );
 
-	// Add Colour Palette to Gutenberg
-	function disable_gutenberg_custom_colour_picker() {
+		// Disable custom colours
 		add_theme_support( 'disable-custom-colors' );
-	}
-	add_action( 'after_setup_theme', 'disable_gutenberg_custom_colour_picker' );
 
-	function disable_gutenberg_custom_font_sizes() {
+		// Disable gradients
+		add_theme_support( '__experimental-editor-gradient-presets', array() );
+		add_theme_support( '__experimental-disable-custom-gradients' );
+
+		// Disable Custom font sizes
 		add_theme_support('disable-custom-font-sizes');
-	}
-	add_action( 'after_setup_theme', 'disable_gutenberg_custom_font_sizes' );
 
-	function add_custom_gutenberg_color_palette() {
-		add_theme_support(
-			'editor-color-palette',
-			[
-				[
-					'name'  => 'Blue',
-					'slug'  => 'blue',
-					'color' => '#3b62a1',
-				],
-				[
-					'name'  => 'Navy',
-					'slug'  => 'navy',
-					'color' => '#414656',
-				],
-				[
-					'name'  => 'Grey',
-					'slug'  => 'grey',
-					'color' => '#a5abbd',
-				],
-				[
-					'name'  => 'Yellow',
-					'slug'  => 'yellow',
-					'color' => '#fafa0f',
-				],
-				[
-					'name'  => 'Light Yellow',
-					'slug'  => 'yellow_light',
-					'color' => '#e0e07c',
-				],
-				[
-					'name'  => 'Black',
-					'slug'  => 'black',
-					'color' => '#000000',
-				],
-				[
-					'name'  => 'White',
-					'slug'  => 'white',
-					'color' => '#ffffff',
-				],
-			]
-		);
+		// Add custom colour palette
+		add_theme_support('editor-color-palette', $colours);
 	}
-	add_action( 'after_setup_theme', 'add_custom_gutenberg_color_palette' );
-    
+	add_action( 'after_setup_theme', 'custom_gutenberg_styles' );    
 ?>
