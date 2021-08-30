@@ -16,9 +16,14 @@
 	}
 
 	ul {
+		max-width: unset;
 		margin: 0;
 		padding: 0;
 		list-style: none;
+	}
+
+	&:last-child {
+		margin-bottom: -20px;
 	}
 }
 
@@ -86,6 +91,12 @@
 		flex-grow: 1;
 		width: 45%;
 		margin: 10px;
+
+		.content {
+			ul {
+				display: block;
+			}
+		}
 	}
 
 	@supports(grid-template-areas: '.') {
@@ -107,9 +118,22 @@
 	}
 }
 
+@media(min-width: 50em) {
+	.services {
+		&:before {
+			width: 110vw;
+			margin-left: 95px;
+		}
+	}
+}
+
 @media(min-width: 60em) {
 	.services {
 		padding: 50px 0;
+
+		&:last-child {
+			margin-bottom: -70px;
+		}
 
 		.cta {
 			margin-top: 50px;
@@ -120,6 +144,10 @@
 @media(min-width: 80em) {
 	.services {
 		padding: 100px 0;
+
+		&:before {
+			margin-left: 0;
+		}
 
 		.cta {
 			margin-top: 100px;

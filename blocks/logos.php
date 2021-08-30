@@ -25,7 +25,7 @@
 						<li>
 							<img 
 								class="logo"
-								src="<?php echo $logo['sizes']['logos']; ?>" 
+								src="<?php echo $logo['sizes']['med_square']; ?>" 
 								alt="<?php echo $logo['title']; ?>"
 							/>
 						</li>

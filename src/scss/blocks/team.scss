@@ -3,6 +3,10 @@
 	margin: 0 auto;
 	padding: 20px 0;
 
+	&:last-child {
+		margin-bottom: -20px;
+	}
+
 	&:before {
 		content: '';
 		position: absolute;
@@ -20,6 +24,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	max-width: unset;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -191,6 +196,11 @@
 	.team {
 		padding: 50px 0;
 
+		&:before {
+			width: 110vw;
+			margin-left: 95px;
+		}
+
 		h2 {
 			font-size: 1.8em;
 		}
@@ -223,5 +233,17 @@
 	.team {
 		margin: 0;
 		padding: 100px 0;
+
+		&:last-child {
+			margin-bottom: -70px;
+		}
+	}
+}
+
+@media(min-width: 80em) {
+	.team {
+		&:before {
+			margin-left: 0;
+		}
 	}
 }

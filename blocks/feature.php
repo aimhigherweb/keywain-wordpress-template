@@ -24,7 +24,7 @@
 	</div>
 	<?php if(check_field_value([get_field('image')])): ?>
 		<img 
-			src="<?php echo get_field('image')['sizes']['block_image']; ?>" 
+			src="<?php echo get_field('image')['sizes']['block_featured']; ?>" 
 		/>
 	<?php endif; ?>
 </section>

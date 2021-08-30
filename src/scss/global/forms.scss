@@ -156,6 +156,37 @@ form {
 	}
 }
 
+.wpforms-page-indicator-page-progress {
+	background: var.$primary !important;
+}
+
+div.wpforms-container {
+	form.wpforms-form {
+		input, textarea, select {
+			&[class*=wpforms] {
+				display: block;
+				width: 100%;
+				max-width: unset;
+			}
+
+			&[type='checkbox'], &[type='radio'] {
+				& + label {
+					display: flex;
+					position: relative;
+					margin-right: 20px;
+				}
+			}
+		}
+
+		.wpforms-field-row  {
+			&[class*=wpforms] {
+				width: 100%;
+				max-width: unset;
+			}
+		}
+	}
+}
+
 .wpforms-field-sublabel {
 	margin: -20px 0 20px 10px;
 	font-weight: 400;

@@ -582,8 +582,6 @@
 					'return_format' => 'array',
 					'preview_size' => 'thumbnail',
 					'library' => 'all',
-					'min_width' => 600,
-					'min_height' => 600,
 					'min_size' => '',
 					'max_width' => '',
 					'max_height' => '',

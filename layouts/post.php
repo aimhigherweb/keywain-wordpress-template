@@ -6,9 +6,7 @@
 			<?php foreach(get_the_tags() as $tag) : ?>
 
 				<li>
-					<a href="<?php echo get_tag_link($tag->term_id); ?>">
-						<?php echo $tag->name; ?>
-					</a>
+				<?php echo $tag->name; ?>
 				</li>
 
 			<?php endforeach; ?>

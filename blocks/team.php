@@ -22,7 +22,7 @@
 
 			<li class="profile">
 				<img 
-					src="<?php echo get_sub_field('image')['sizes']['block_image_small']; ?>" 
+					src="<?php echo get_sub_field('image')['sizes']['profile']; ?>" 
 					alt="Profile image of <?php echo get_sub_field('name'); ?>" 
 				/>
 				<h3><?php echo get_sub_field('name'); ?></h3>
@@ -35,7 +35,7 @@
 					</button>
 					<div class="content">
 						<img 
-							src="<?php echo get_sub_field('image')['sizes']['block_image_small']; ?>" 
+							src="<?php echo get_sub_field('image')['sizes']['profile']; ?>" 
 							alt="Profile image of <?php echo get_sub_field('name'); ?>" 
 						/>
 						<h3><?php echo get_sub_field('name'); ?></h3>

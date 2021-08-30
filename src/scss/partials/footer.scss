@@ -58,7 +58,8 @@
 		}
 
 		nav {
-			width: 40%;
+			flex-grow: 1;
+			width: 35%;
 
 			ul {
 				justify-content: flex-start;
