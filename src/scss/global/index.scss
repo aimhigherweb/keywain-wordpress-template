@@ -35,3 +35,18 @@ main {
 @import './typography.scss';
 @import './forms.scss';
 @import './figures.scss';
+
+.not_found {
+	max-width: 800px;
+	min-height: 50vh;
+	margin: 50px auto;
+	font-size: 2em;
+	text-align: center;
+}
+
+@media(min-width: 60em) {
+	.not_found {
+		min-height: 40vh;
+		padding-top: 100px;
+	}
+}
