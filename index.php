@@ -26,14 +26,17 @@
 			)
 		);
 	}
+	else if(is_tag()) {
+		get_template_part(
+			'partials/layout', 
+			null, 
+			array(
+				'template' => 'tag',
+			)
+		);
+	}
 	else {
-		echo 'Archive: ';
-		var_dump(is_archive());
-		echo '<br/>Category: ';
-		var_dump(is_category());
-		echo '<br/>Tag: ';
-		var_dump(is_tag());
-		// get_template_part('partials/layout');
+		get_template_part('partials/layout');
 	}
 
 ?>

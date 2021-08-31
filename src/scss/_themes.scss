@@ -173,6 +173,15 @@
 			&:hover {
 				color: $secondary;
 			}
+
+			&.current {
+				background: $secondary;
+				color: var.$white;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 	}
 

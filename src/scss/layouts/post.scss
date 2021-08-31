@@ -24,6 +24,9 @@
 
 	a {
 		display: block;
+		padding: 5px 10px 8px;
+		border-radius: 2em;
+		line-height: 1;
 		text-decoration: none;
 
 		&:before {
@@ -33,6 +36,15 @@
 		&:hover {
 			color: var.$secondary;
 			text-decoration: underline;
+		}
+
+		&.current {
+			background: var.$secondary;
+			color: var.$white;
+
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 }
