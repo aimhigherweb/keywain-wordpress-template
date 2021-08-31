@@ -36,6 +36,14 @@ main {
 	}
 }
 
+@media(min-width: 60em) {
+	main {
+		.notice {
+			margin-left: -5vw;
+		}
+	}
+}
+
 @media(min-width: 80em) {
 	main {
 		.notice {
@@ -47,7 +55,9 @@ main {
 $max_width: 1000px * (10/9);
 
 @media(min-width: $max_width) {
-	.notice {
-		margin-left: calc(-1 * (50vw - 500px));
+	main {
+		.notice {
+			margin-left: calc(-1 * (50vw - 500px));
+		}
 	}
 }

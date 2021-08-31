@@ -184,6 +184,30 @@ div.wpforms-container {
 				max-width: unset;
 			}
 		}
+
+		.wpforms-field-date-time {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			label {
+				flex-shrink: 0;
+				width: 100%;
+			}
+
+			select {
+				flex-grow: 1;
+				width: 25%;
+			}
+		}
+
+		.wpforms-field-address {
+			.wpforms-field-medium {
+				> div {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 

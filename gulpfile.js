@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const gulp = require('gulp')
+const {src, dest, watch, task, series} = require('gulp')
 const sass = require('gulp-dart-sass')
 const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
@@ -27,11 +27,12 @@ const buildFolders = [
 	'blocks',
 	'layouts',
 	'partials',
-	'acf'
+	'acf',
+	'parts'
 ]
 
-gulp.task('sass', () => {
-	return gulp.src(compileFiles)
+task('sass', () => {
+	return src(compileFiles)
 		.pipe(stylelint({
 			failAfterError: false,
 			reportOutputDir: false,
@@ -46,11 +47,11 @@ gulp.task('sass', () => {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write(sourceMaps))
-		.pipe(gulp.dest(cssFiles))
+		.pipe(dest(cssFiles))
 		.pipe(browserSync.stream())
 })
 
-gulp.task('serve', () => {
+task('serve', () => {
 	browserSync.init({
 		port: process.env.PORT || 3000,
 		proxy: process.env.WP_URL,
@@ -59,12 +60,12 @@ gulp.task('serve', () => {
 		open: false,
 	})
 
-	gulp.watch(sassPartials, gulp.series('sass'))
-	gulp.watch(themeFiles).on('change', browserSync.reload)
+	watch(sassPartials, series('sass'))
+	watch(themeFiles).on('change', browserSync.reload)
 })
 
-gulp.task('buildSass', () => {
-	return gulp.src(compileFiles)
+task('buildSass', () => {
+	return src(compileFiles)
 		.pipe(stylelint({
 			failAfterError: false,
 			reportOutputDir: false,
@@ -79,33 +80,30 @@ gulp.task('buildSass', () => {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write(sourceMaps))
-		.pipe(gulp.dest(cssFiles))
+		.pipe(dest(cssFiles))
 })
 
-gulp.task('buildFiles', () => {
+task('buildFiles', () => {
 	buildFolders.forEach((file, i) => {
-		gulp.src(`${file}/**`, {
+		src(`${file}/**`, {
 				allowEmpty: true,
 			})
-			.pipe(gulp.dest(`./dist/${file}`))
-
-		if (i === buildFolders.length - 1) {
-			completed = true
-		}
+			.pipe(dest(`./dist/${file}`))
 	})
 
-	return gulp.src(buildFiles, {
+	return src(buildFiles, {
 			allowEmpty: true,
 		})
-		.pipe(gulp.dest('./dist'))
+		.pipe(dest('./dist'))
+
 })
 
-gulp.task('zip' , () => {
-	return gulp.src('./dist/**')
+task('zip' , () => {
+	return src('./dist/**')
 		.pipe(zip(`${process.env.THEME_NAME}.zip`))
-		.pipe(gulp.dest('.'))
+		.pipe(dest('.'))
 })
 
-gulp.task('build', gulp.series('buildSass', 'buildFiles','zip'))
+task('build', series('buildSass', 'buildFiles','zip'))
 
-gulp.task('default', gulp.series('serve'))
+task('default', series('serve'))

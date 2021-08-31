@@ -53,7 +53,7 @@
 
 		<title><?php echo wp_get_document_title(); ?></title>
 
-		<?php /*get_template_part('partials/dev-styles');*/ ?>
+		<?php get_template_part('partials/dev-styles'); ?>
 
 	</head>
 

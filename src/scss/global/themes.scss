@@ -157,6 +157,8 @@ body {
 	}
 
 	.post {
+		@include mixins.animate_border(var.$grey, $primary, var(--border_width));
+
 		&:hover {
 			border-color: $primary;
 
@@ -409,6 +411,8 @@ body {
 	}
 
 	.post {
+		@include mixins.animate_border(var.$grey, $primary, var(--border_width));
+
 		&:hover {
 			border-color: $primary;
 
