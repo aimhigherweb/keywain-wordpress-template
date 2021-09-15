@@ -49,7 +49,6 @@
 	border: 3px solid var.$grey;
 	text-align: left;
 
-	@include mixins.animate_border(var.$grey, var.$primary, var(--border_width));
 
 	h2 {
 		margin-top: 0;
