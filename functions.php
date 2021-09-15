@@ -55,7 +55,7 @@
     add_theme_support( 'post-thumbnails' );
 
     // Custom Image Sizes
-    add_image_size( 'block_image', 350, 350, false );
+    add_image_size( 'block_image', 400, 350, false );
     add_image_size( 'block_news', 300, 375, array( 'center', 'center' ) );
     add_image_size( 'block_featured', 1000, 400, array( 'center', 'center' ) );
     add_image_size( 'profile', 200, 200, array( 'center', 'center' ) );

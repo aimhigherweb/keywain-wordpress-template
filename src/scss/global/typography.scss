@@ -12,6 +12,12 @@ a {
 	&:hover {
 		text-decoration: none;
 	}
+
+	@include mixins.gutenberg_text_colours;
+}
+
+p {
+	@include mixins.gutenberg_text_colours;
 }
 
 h1, h2, h3, h4, h5 {
@@ -26,6 +32,8 @@ h1, h2, h3, h4, h5 {
 			text-decoration: underline;
 		}
 	}
+
+	@include mixins.gutenberg_text_colours;
 }
 
 h1, h2 {

@@ -7,6 +7,7 @@ $cat_name = $cat[0]->name;
 
 <article class="article">
 	<header>
+		
 		<h1><?php echo get_the_title(); ?></h1>
 
 		<?php if(check_field_value([$cat]) && !in_array($cat_name, ['Uncategorised', 'Uncategorized'])) : ?>
