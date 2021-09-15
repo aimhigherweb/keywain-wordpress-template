@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "AimHigher Web <webmaster@aimhigherweb.design> (https://aimhigherweb.design)",
   "scripts": {
-    "start": "npm run dev",
+    "start": "gulp sass && npm run dev",
     "dev": "gulp serve",
     "build": "gulp build",
     "clean": "rm -rf dist *.css *.zip"
