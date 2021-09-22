@@ -62,7 +62,8 @@
 	}
 
 	.mce-toolbar {
-		button {
+		button, .button, .btn {
+			margin: 0;
 			background: transparent;
 			color: var.$neutral;
 		}

@@ -152,11 +152,6 @@
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '50',
-						'class' => '',
-						'id' => '',
-					),
 					'default_value' => '',
 					'tabs' => 'visual',
 					'toolbar' => 'basic',
@@ -171,11 +166,6 @@
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
 					'layout' => 'block',
 					'sub_fields' => array(
 						array(
@@ -226,11 +216,6 @@
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '50',
-						'class' => '',
-						'id' => '',
-					),
 					'return_format' => 'array',
 					'preview_size' => 'medium',
 					'insert' => 'append',

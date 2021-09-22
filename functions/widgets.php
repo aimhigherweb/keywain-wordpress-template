@@ -25,6 +25,14 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Booking Sidebar',  
 		'id' => 'booking'
 	));
+
+	// Footer Widget
+	register_sidebar(array(
+		'before_widget' => '<div class="%2$s">',
+		'after_widget' => '</div>',
+		'name' => 'Footer Widget',  
+		'id' => 'footer_widget'
+	));
 }
 
 ?>
