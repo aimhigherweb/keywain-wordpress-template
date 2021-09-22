@@ -120,6 +120,58 @@
 			'active' => true,
 		));
 
+		// Footer Widget Display
+		acf_add_local_field_group(array(
+			'key' => 'group_614af3c3c3f39',
+			'title' => 'Layout Settings',
+			'fields' => array(
+				array(
+					'key' => 'field_614af43814e79',
+					'label' => 'Footer Widget',
+					'name' => 'footer_widget',
+					'type' => 'true_false',
+					'instructions' => 'Should the footer widget appear on this page?',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 1,
+					'ui' => 1,
+					'ui_on_text' => '',
+					'ui_off_text' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'post',
+					),
+				),
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'page',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'side',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+		
+
 		// Blocks - Logos
 		acf_add_local_field_group(array(
 			'key' => 'group_60d58a487e5f5',
@@ -995,6 +1047,141 @@
 						'param' => 'block',
 						'operator' => '==',
 						'value' => 'acf/operating-hours',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+
+		// Blocks - Contact
+		acf_add_local_field_group(array(
+			'key' => 'group_612c380d4b2c0_contact',
+			'title' => 'Block - Contact',
+			'fields' => array(
+				array(
+					'key' => 'field_60d1ec58d25ae_contact_map',
+					'label' => 'Map Image',
+					'name' => 'map',
+					'type' => 'url',
+					'instructions' => 'Link to map image',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_60d1ec58d25ae_contact_directions',
+					'label' => 'Map Link',
+					'name' => 'map_link',
+					'type' => 'url',
+					'instructions' => 'Link to Google Maps location',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_612c3826f32ff_contact',
+					'label' => 'Opening Hours',
+					'name' => 'days',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'collapsed' => '',
+					'min' => 0,
+					'max' => 0,
+					'layout' => 'row',
+					'button_label' => 'Add Day',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_612c383df3300_contact',
+							'label' => 'Day',
+							'name' => 'day',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_612c3856f3301_contact',
+							'label' => 'Start Time',
+							'name' => 'time_start',
+							'type' => 'time_picker',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_format' => 'g:i a',
+							'return_format' => 'g:i a',
+						),
+						array(
+							'key' => 'field_612c387af3302_contact',
+							'label' => 'End Time',
+							'name' => 'time_end',
+							'type' => 'time_picker',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_format' => 'g:i a',
+							'return_format' => 'g:i a',
+						),
+					),
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'block',
+						'operator' => '==',
+						'value' => 'acf/contact',
 					),
 				),
 			),

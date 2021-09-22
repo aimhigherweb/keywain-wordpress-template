@@ -1,0 +1,38 @@
+.contact_block {
+	img {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto 20px;
+	}
+}
+
+@media (min-width: 50em) {
+	.contact_block {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		a {
+			display: block;
+			flex-shrink: 1;
+		}
+
+		img {
+			margin: 0 20px 20px 0;
+		}
+
+		address {
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+@media(min-width: 60em) {
+	.contact_block {
+		img {
+			margin-right: 50px;
+		}
+	}
+}

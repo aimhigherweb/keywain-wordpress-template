@@ -20,7 +20,7 @@ if ( function_exists('register_sidebar') ) {
 
 	// Booking Sidebar
 	register_sidebar(array(
-		'before_widget' => '<div class="%2$s">',
+	'before_widget' => '<div class="%2$s">',
 		'after_widget' => '</div>',
 		'name' => 'Booking Sidebar',  
 		'id' => 'booking'

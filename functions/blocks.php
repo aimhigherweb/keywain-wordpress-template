@@ -78,6 +78,16 @@
 				'icon' => 'clock',
 				'mode' => 'edit',
 			));
+
+			acf_register_block(array(
+				'name' => 'contact',
+				'title' => 'Contact Block',
+				'description' => 'A block to display the contact details',
+				'render_callback' => 'contact_block_render_callback',
+				'category' => 'design',
+				'icon' => 'email',
+				'mode' => 'edit',
+			));
 		}
 	}
 	add_action('acf/init', 'my_acf_init');
@@ -112,5 +122,9 @@
 
 	function operating_hours_block_render_callback($block) {
 		include(get_theme_file_path('/blocks/operating_hours.php'));
+	}
+
+	function contact_block_render_callback($block) {
+		include(get_theme_file_path('/blocks/contact.php'));
 	}
 ?>

@@ -11,6 +11,9 @@ const toggleMenu = () => {
 
 const togglePopup = (popupID, auto) => {
 	const popup = document.querySelector(`#${popupID}`)
+
+	if(!popup) return;
+
 	const lastUpdated = popup.querySelector('.last-updated time')?.dataset?.date
 	let prevView = window.localStorage.getItem('popupNotice')
 	const trigger = () => {

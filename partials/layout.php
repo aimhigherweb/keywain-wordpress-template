@@ -76,10 +76,12 @@
 
 			<?php get_template_part('layouts/' . $template); ?>
 
-			<?php if (is_active_sidebar('footer_widget')) : ?>
+			<?php if (is_active_sidebar('footer_widget') && get_field('footer_widget')) : ?>
+
 				<div class="footer_widget">
 					<?php dynamic_sidebar('footer_widget'); ?>
 				</div>
+
 			<?php endif; ?>
 		</main>
 
