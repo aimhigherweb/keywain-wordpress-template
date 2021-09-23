@@ -10,7 +10,9 @@
 <section class="block standard">
 	
 	<div>
-		<h2><?php echo get_field('heading'); ?></h2>
+		<?php if(check_field_value([get_field('heading')])) : ?>
+			<h2><?php echo get_field('heading'); ?></h2>
+		<?php endif; ?>
 		<div class="content">
 			<?php echo get_field('content'); ?>
 			<?php

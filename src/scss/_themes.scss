@@ -104,6 +104,12 @@
 		}
 	}
 
+	&.has_banner {
+		h1, .post-header {
+			color: $secondary;
+		}
+	}
+
 	.logos {
 		h2 {
 			color: $secondary;

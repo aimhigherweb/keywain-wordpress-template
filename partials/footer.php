@@ -28,6 +28,6 @@
 	<p class="copyright">Website by <a href="https://aimhigherweb.design" target="_blank" rel="nofollow">AimHigher Web</a></p>
 
 	<?php if (is_active_sidebar('notice_popup')) : ?>
-		<?php get_template_part('partials/popup'); ?>
+		<?php get_template_part('parts/popup'); ?>
 	<?php endif; ?>
 </footer>

@@ -12,6 +12,7 @@
 		null, 
 		array(
 			'template' => 'post',
+			'class' => 'single_post'
 		)
 	);
 

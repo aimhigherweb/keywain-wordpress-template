@@ -22,6 +22,12 @@
 
 	$colour = get_theme_mod( 'main_colour' );
 
+	$class = $class . ' theme_' . $colour;
+
+	if(has_post_thumbnail()) {
+		$class = $class . ' has_banner';
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +63,7 @@
 
 	</head>
 
-	<body class="<?php echo $class . ' theme_' . $colour; ?>">
+	<body class="<?php echo $class; ?>">
 		<?php get_template_part('partials/header'); ?>
 
 		<main 
@@ -71,7 +77,11 @@
 			<?php endif; ?>
 
 			<?php if (is_active_sidebar('booking')) : ?>
-				<?php get_template_part('partials/booking'); ?>
+				<?php get_template_part('parts/booking'); ?>
+			<?php endif; ?>
+
+			<?php if (has_post_thumbnail()) : ?>
+				<?php get_template_part('parts/banner'); ?>
 			<?php endif; ?>
 
 			<?php get_template_part('layouts/' . $template); ?>

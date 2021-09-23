@@ -6,9 +6,9 @@ $cat_name = $cat[0]->name;
 ?>
 
 <article class="article">
-	<header>
+	<header class="post-header">
 		
-		<h1><?php echo get_the_title(); ?></h1>
+		<h1 class="post-title"><?php echo get_the_title(); ?></h1>
 
 		<?php if(check_field_value([$cat]) && !in_array($cat_name, ['Uncategorised', 'Uncategorized'])) : ?>
 			<p class="cat">

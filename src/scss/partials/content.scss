@@ -3,7 +3,15 @@ main {
 	margin: 0 auto;
 	padding: 20px;
 
-	@include mixins.child_reset;
+	> *:not(.banner) {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
 	p, h1, h2, h3, h4, ul {
 		max-width: 800px;
