@@ -60,6 +60,11 @@
     add_image_size( 'block_featured', 1000, 400, array( 'center', 'center' ) );
     add_image_size( 'profile', 200, 200, array( 'center', 'center' ) );
     add_image_size( 'med_square', 300, 300, false );
+    add_image_size('banner_s', 800, 300, array('center', 'center'));
+    add_image_size('banner_m', 1000, 400, array('center', 'center'));
+    add_image_size('banner_l', 1200, 500, array('center', 'center'));
+    add_image_size('banner_xl', 1500, 500, array('center', 'center'));
+    add_image_size('banner_xxl', 3000, 500, array('center', 'center'));
 
     // Add Options Page
     if( function_exists('acf_add_options_page') ) {
