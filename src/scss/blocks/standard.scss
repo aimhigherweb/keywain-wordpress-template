@@ -5,6 +5,7 @@
 	img {
 		max-width: 300px;
 		margin: 20px auto 0;
+		border-radius: 10px;
 	}
 }
 
@@ -24,7 +25,7 @@
 			width: 30vw;
 			object-fit: contain;
 			object-position: center;
-			height: 30vw;
+			max-height: 30vw;
 			margin: 0 20px 0 0;
 		}
 
@@ -44,7 +45,7 @@
 			flex-shrink: 0;
 			width: 350px;
 			max-width: unset;
-			height: 350px;
+			max-height: 350px;
 		}
 	}
 }

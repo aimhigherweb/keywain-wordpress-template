@@ -36,10 +36,14 @@
 	}
 
 	.logo {
-		width: 200px;
-		height: 150px;
+		width: 120px;
+		height: 100px;
 		object-position: center;
 		object-fit: contain;
+
+		&:hover {
+			transform: scale(1.5);
+		}
 	}
 
 	.background {
