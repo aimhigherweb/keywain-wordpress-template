@@ -59,8 +59,7 @@
 		}
 
 		nav {
-			flex-grow: 1;
-			width: 35%;
+			flex: 1 0 50%;
 
 			ul {
 				justify-content: flex-start;
@@ -68,6 +67,8 @@
 			}
 
 			&.icons {
+				flex: 0 0 auto;
+
 				ul {
 					justify-content: flex-end;
 				}
@@ -84,6 +85,13 @@
 	.footer {
 		width: 100vw;
 		padding: 50px 5vw 20px;
+
+		nav {
+			&.icons {
+				flex-grow: 1;
+				min-width: 200px;
+			}
+		}
 	}
 }
 
