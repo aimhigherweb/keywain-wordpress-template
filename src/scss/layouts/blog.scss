@@ -49,10 +49,22 @@
 	border: 3px solid var.$grey;
 	text-align: left;
 
+	@include mixins.animate_border(var.$grey, var.$primary, var(--border_width));
 
 	h2 {
 		margin-top: 0;
 		text-align: left;
+	}
+
+	.cat {
+		margin: -10px 0 10px 10px;
+		font-size: 0.8em;
+		font-weight: 400;
+		text-align: left;
+
+		a {
+			font-weight: inherit;
+		}
 	}
 
 	&:hover {
@@ -64,6 +76,8 @@
 	}
 
 	img {
+		position: relative;
+		z-index: -1;
 		max-width: calc(100% + 40px);
 		margin: -20px -20px 20px;
 	}
@@ -72,6 +86,7 @@
 		&:before {
 			content: '';
 			position: absolute;
+			z-index: 5;
 			top: 0;
 			right: 0;
 			bottom: 0;
@@ -117,10 +132,12 @@
 }
 
 @media(min-width: 40em) {
+	$image_size: 300px;
+
 	.post {
 		position: relative;
 		max-width: 800px;
-		padding-right: 270px;
+		padding-right: $image_size + 20px;
 		overflow: hidden;
 
 		img {
@@ -128,53 +145,124 @@
 			top: 0;
 			right: 0;
 			bottom: 0;
-			width: 250px;
-			height: calc(100% + 40px);
-			border-left: 3px solid var.$grey;
+			width: $image_size;
+			height: calc(100%);
+			margin: 0;
 			object-fit: cover;
 			object-position: center;
 		}
 
+		.featured_image {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: $image_size;
+			height: calc(100%);
+			border: 3px solid var.$grey;
+
+			@include mixins.child_animate_border_start(var.$grey, var.$primary, var(--border_width));
+		}
+
+		.content {
+			display: -webkit-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 6;
+			-webkit-box-orient: vertical;
+		}
+
+		&:hover {
+			.featured_image {
+				@include mixins.child_animate_border_end(var.$grey, var.$primary, var(--border_width));
+			}
+		}
+
 		&:nth-child(2n) {
 			padding-right: 20px;
-			padding-left: 270px;
+			padding-left: $image_size + 20px;
 
-			img {
+			img, .featured_image {
 				right: auto;
 				left: 0;
-				border-right: 3px solid var.$grey;
-				border-left: 0;
-			}
-
-			&:hover {
-				img {
-					border-color: var.$primary;
-				}
 			}
 		}
 	}
 }
 
 @media(min-width: 50em) {
+	$image_size: 350px;
+
 	.post {
 		--border_width: 5px;
 
 		padding: 50px;
-		padding-right: 350px;
+		padding-right: $image_size + 50px;
 		border-width: 5px;
 
 		img {
-			width: 300px;
+			width: $image_size;
+		}
+
+		.featured_image {
+			width: $image_size;
 			border-width: 5px;
 		}
 
 		&:nth-child(2n) {
 			padding-right: 50px;
-			padding-left: 350px;
+			padding-left: $image_size + 50px;
 
-			img {
+			.feature_image {
 				border-width: 5px;
 			}
+		}
+	}
+}
+
+@media(min-width: 60em) {
+	$image_size: 400px;
+
+	.post {
+		padding-right: $image_size + 50px;
+		transition: max-width 1s linear;
+
+		img {
+			width: $image_size;
+		}
+
+		.featured_image {
+			width: $image_size;
+		}
+
+		&:nth-child(2n) {
+			padding-left: $image_size + 50px;
+		}
+
+		&:hover {
+			max-width: 1200px;
+			transition: max-width 1s linear 0.2s;
+		}
+	}
+}
+
+@media(min-width: 70em) {
+	$image_size: 500px;
+
+	.post {
+		max-width: 900px;
+		padding-right: $image_size + 50px;
+
+		img {
+			width: $image_size;
+		}
+
+		.featured_image {
+			width: $image_size;
+		}
+
+		&:nth-child(2n) {
+			padding-left: $image_size + 50px;
 		}
 	}
 }

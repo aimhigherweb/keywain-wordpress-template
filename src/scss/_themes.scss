@@ -151,11 +151,15 @@
 	.post {
 		@include mixins.animate_border(var.$grey, $primary, var(--border_width));
 
+		.featured_image {
+			@include mixins.child_animate_border_start(var.$grey, $primary, var(--border_width));
+		}
+
 		&:hover {
 			border-color: $primary;
 
-			img {
-				border-color: $primary;
+			.featured_image {
+				@include mixins.child_animate_border_end(var.$grey, $primary, var(--border_width));
 			}
 		}
 	}
@@ -272,6 +276,18 @@
 			nav {
 				ul {
 					color: $primary;
+				}
+			}
+		}
+	}
+
+	@media(min-width: 60em) {
+		.post {
+			@include mixins.animate_border(var.$grey, $primary, var(--border_width), 1s);
+
+			&:hover {
+				.featured_image {
+					@include mixins.child_animate_border_end(var.$grey, $primary, var(--border_width), 1s);
 				}
 			}
 		}

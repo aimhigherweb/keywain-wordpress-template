@@ -56,7 +56,7 @@
 
     // Custom Image Sizes
     add_image_size( 'block_image', 400, 350, false );
-    add_image_size( 'block_news', 300, 375, array( 'center', 'center' ) );
+    add_image_size( 'block_news', 500, 375, array( 'center', 'center' ) );
     add_image_size( 'block_featured', 1000, 400, array( 'center', 'center' ) );
     add_image_size( 'profile', 200, 200, array( 'center', 'center' ) );
     add_image_size( 'med_square', 300, 300, false );
