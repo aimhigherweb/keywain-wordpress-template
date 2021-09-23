@@ -30,7 +30,7 @@
 				<button onclick="togglePopup('<?php echo $profile_id; ?>')">Read more</button>
 				<div class="modal" id="<?php echo $profile_id; ?>">
 					<button class="toggle" onclick="togglePopup('<?php echo $profile_id; ?>')">
-						<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/close.svg')); ?>
+						<?php echo inline_svg(get_template_directory_uri() . '/src/img/close.svg'); ?>
 						<span class="sr-only">Toggle Bio</span>
 					</button>
 					<div class="content">

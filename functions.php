@@ -18,7 +18,7 @@
     function social_menu_icons($items, $args) {
         if($args->theme_location == 'social_menu') {            
             foreach($items as &$item) {
-                $icon = wp_remote_retrieve_body(wp_remote_get(get_field('icon', $item)));
+                $icon = inline_svg(get_field('icon', $item));
 
                 if($icon) {
                     $item->title = $icon . '<span class="sr-only">' . $item->title . '</span>';
@@ -37,7 +37,7 @@
         if($args->theme_location == 'main_menu') {            
             foreach($items as &$item) {
                 if(in_array('menu-item-has-children', $item->classes)) {
-                    $item->title = '<span class="sub">' . $item->title . wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/chevron.svg')) . '</span>';
+                    $item->title = '<span class="sub">' . $item->title . inline_svg(get_template_directory_uri() . '/src/img/chevron.svg') . '</span>';
                 }
             }
 

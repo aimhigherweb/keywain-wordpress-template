@@ -222,4 +222,17 @@
 
         return $exists;
     }
+
+    // Fetch and inline SVG
+    function inline_svg($svg_path) {
+        $svg_fetch = wp_remote_get($svg_path);
+        $svg_body = '';
+
+        if($svg_fetch['response']['code'] == '200'){
+            $svg_body = wp_remote_retrieve_body($svg_fetch);
+        }
+       
+        return $svg_body;
+       
+    }
 ?>

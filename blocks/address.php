@@ -14,7 +14,7 @@
 			target="_blank"
 			href="tel:<?php echo preg_replace('/\s+/', '', $phone); ?>"
 		>
-			<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/icons/phone.svg')); ?>
+			<?php echo inline_svg(get_template_directory_uri() . '/src/img/icons/phone.svg'); ?>
 			<?php echo $phone; ?>
 		</a>
 	</address>
@@ -28,7 +28,7 @@
 			target="_blank"
 			href="mailto:<?php echo $email; ?>"
 		>
-			<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/email.svg')); ?>
+			<?php echo inline_svg(get_template_directory_uri() . '/src/img/email.svg'); ?>
 			<?php echo $email; ?>
 		</a>
 	</address>

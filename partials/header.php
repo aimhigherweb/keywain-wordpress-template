@@ -8,7 +8,7 @@
 	<a class="logo" href="/">
 		<?php 
 			if(preg_match('/\.svg$/', $logo)) {
-				echo wp_remote_retrieve_body(wp_remote_get($logo));
+				echo inline_svg($logo);
 			} 
 			else {
 				echo '<img src="' . $logo . '" />';
@@ -19,7 +19,7 @@
 	
 	<nav class="main">
 		<button class="hamburger" onclick="toggleMenu()">
-			<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/hamburger.svg')); ?>
+			<?php echo inline_svg(get_template_directory_uri() . '/src/img/hamburger.svg'); ?>
 			<span class="sr-only">Toggle Main Menu</span>
 		</button>
 		<ul>
@@ -32,7 +32,7 @@
 			?>
 			<li>
 				<a href="tel:<?php echo preg_replace('/\s+/', '', $phone); ?>">
-					<?php echo wp_remote_retrieve_body(wp_remote_get(get_template_directory_uri() . '/src/img/phone.svg')); ?>
+					<?php echo inline_svg(get_template_directory_uri() . '/src/img/phone.svg'); ?>
 					<span class="label">Call Us</span>
 				</a>
 			</li>

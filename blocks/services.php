@@ -25,7 +25,7 @@
 				
 			
 				<li class="service">
-					<?php echo wp_remote_retrieve_body(wp_remote_get($icon)); ?>
+					<?php echo inline_svg($icon); ?>
 					<h3><?php echo get_sub_field('heading'); ?></h3>
 					<p class="sub"><?php echo get_sub_field('sub_heading'); ?></p>
 					<div class="content"><?php echo get_sub_field('content'); ?></div>
