@@ -239,7 +239,7 @@ nav {
 		padding: 50px 5vw;
 
 		nav {
-			font-size: 1em;
+			font-size: 0.9em;
 		}
 	}
 }
@@ -247,7 +247,7 @@ nav {
 @media(min-width: 70em) {
 	.header {
 		nav {
-			font-size: 1.2em;
+			font-size: 1em;
 		}
 	}
 }
@@ -257,5 +257,13 @@ $max_width: 1200px * (10/9);
 @media(min-width: $max_width) {
 	.header {
 		padding: 50px calc(50vw - 600px);
+	}
+}
+
+@media(min-width: 80em) {
+	.header {
+		nav {
+			font-size: 1.2em;
+		}
 	}
 }
