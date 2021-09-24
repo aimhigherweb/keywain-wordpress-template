@@ -11,14 +11,16 @@
 		margin: 10px;
 	}
 
-	a {
+	a, .cat-title {
 		display: block;
 		padding: 10px 20px;
 		border-radius: 2em;
 		font-family: var.$font_headings;
 		font-weight: 700;
 		text-decoration: none;
+	}
 
+	a {
 		&:hover {
 			background: var.$primary;
 			color: var.$white;
@@ -28,6 +30,11 @@
 			background: var.$secondary;
 			color: var.$white;
 		}
+	}
+
+	.cat-title {
+		color: var.$primary;
+		text-transform: uppercase;
 	}
 }
 
@@ -218,6 +225,33 @@
 			}
 		}
 	}
+
+	main {
+		&[data-booking] {
+			.post {
+				$image_size: 250px;
+				margin-right: -50px;
+
+				img {
+					width: $image_size;
+				}
+
+				.featured_image {
+					width: $image_size;
+				}
+
+				&:nth-child(2n - 1) {
+					padding-right: $image_size + 50px;
+					padding-left: 50px;
+				}
+
+				&:nth-child(2n) {
+					padding-right: 50px;
+					padding-left: $image_size + 50px;
+				}
+			}
+		}
+	}
 }
 
 @media(min-width: 60em) {
@@ -244,6 +278,30 @@
 			transition: max-width 1s linear 0.2s;
 		}
 	}
+
+	main {
+		&[data-booking] {
+			.post {
+				$image_size: 300px;
+
+				img {
+					width: $image_size;
+				}
+
+				.featured_image {
+					width: $image_size;
+				}
+
+				&:nth-child(2n - 1) {
+					padding-right: $image_size + 50px;
+				}
+
+				&:nth-child(2n) {
+					padding-left: $image_size + 50px;
+				}
+			}
+		}
+	}
 }
 
 @media(min-width: 70em) {
@@ -262,7 +320,63 @@
 		}
 
 		&:nth-child(2n) {
+			margin-left: -50px;
 			padding-left: $image_size + 50px;
+		}
+
+		&:nth-child(2n - 1) {
+			margin-right: -50px;
+		}
+	}
+
+	main {
+		&[data-booking] {
+			.post {
+				$image_size: 400px;
+
+				img {
+					width: $image_size;
+				}
+
+				.featured_image {
+					width: $image_size;
+				}
+
+				&:nth-child(2n - 1) {
+					padding-right: $image_size + 50px;
+				}
+
+				&:nth-child(2n) {
+					margin-right: 0;
+					padding-left: $image_size + 50px;
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: 80em) {
+	main {
+		&[data-booking] {
+			.post {
+				$image_size: 500px;
+
+				img {
+					width: $image_size;
+				}
+
+				.featured_image {
+					width: $image_size;
+				}
+
+				&:nth-child(2n - 1) {
+					padding-right: $image_size + 50px;
+				}
+
+				&:nth-child(2n) {
+					padding-left: $image_size + 50px;
+				}
+			}
 		}
 	}
 }
