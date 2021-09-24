@@ -38,6 +38,18 @@
 	}
 }
 
+.tags {
+	.cat-title {
+		color: var.$secondary;
+		text-transform: uppercase;
+	}
+
+	&.filter {
+		justify-content: center;
+		margin: 20px auto 0;
+	}
+}
+
 .posts {
 	max-width: unset;
 	margin: 0;

@@ -15,6 +15,7 @@
 </h1>
 
 <ul class="cats">
+	<li class="cat-title">Filter by Category</li>
 	<li>
 		<a 
 			href="<?php echo $blog; ?>"

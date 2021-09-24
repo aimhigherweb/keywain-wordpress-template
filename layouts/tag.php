@@ -19,7 +19,8 @@
 	); ?>
 </h1>
 
-<ul class="tags">
+<ul class="tags filter">
+	<li class="cat-title">Filter by Tag</li>
 	<li>
 		<a 
 			href="<?php echo $blog; ?>"
