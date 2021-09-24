@@ -11,6 +11,8 @@
 	
 	$template = 'default';
 	$class = '';
+	$page_id = get_the_ID();
+	$category = null;
 
 	if(isset($args, $args['template'])) {
 		$template = $args['template'];
@@ -18,6 +20,14 @@
 
 	if(isset($args, $args['class'])) {
 		$class = $args['class'];
+	}
+
+	if(isset($args, $args['page_id'])) {
+		$page_id = $args['page_id'];
+	}
+
+	if(isset($args, $args['category'])) {
+		$category = $args['category'];
 	}
 
 	$colour = get_theme_mod( 'main_colour' );
@@ -80,8 +90,15 @@
 				<?php get_template_part('parts/booking'); ?>
 			<?php endif; ?>
 
-			<?php if (has_post_thumbnail()) : ?>
-				<?php get_template_part('parts/banner'); ?>
+			<?php if (has_post_thumbnail($page_id) || get_field('image', $category)) : ?>
+				<?php get_template_part(
+					'parts/banner',
+					null,
+					array(
+						'page_id' => $page_id,
+						'category' => $category
+					)
+				); ?>
 			<?php endif; ?>
 
 			<?php get_template_part('layouts/' . $template); ?>

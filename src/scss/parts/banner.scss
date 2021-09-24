@@ -141,6 +141,14 @@ $max_width: 800px + (2 * 50px);
 				.post-header {
 					transform: translateX(calc(-1 * (50vw - 400px)));
 				}
+
+				main {
+					&[data-booking] {
+						.post-header {
+							transform: translateX(-50px);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -155,6 +163,19 @@ $max_width: 800px + (2 * 50px);
 		&.has_banner {
 			.banner, h1 {
 				transform: translateX(-5vw);
+			}
+
+			&.single_post {
+				main {
+					&[data-booking] {
+						.post-header {
+							width: 110vw;
+							max-width: 110vw;
+							padding: 0 100px;
+							transform: translateX(-10vw);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -189,6 +210,17 @@ $max_width: 1000px * 10/9;
 
 				h1 {
 					font-size: 3em;
+				}
+
+				main {
+					&[data-booking] {
+						.post-header {
+							width: 100vw;
+							max-width: 100vw;
+							padding: 0 50px;
+							transform: translateX(calc(-1 * (5vw - (40vw - 400px))));
+						}
+					}
 				}
 			}
 		}
