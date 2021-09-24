@@ -25,7 +25,7 @@
 			null, 
 			array(
 				'template' => 'category',
-				'category' => get_the_category()[0]
+				'category' => get_queried_object()
 			)
 		);
 	}
@@ -35,7 +35,7 @@
 			null, 
 			array(
 				'template' => 'tag',
-				'category' => get_the_tags()[0]
+				'category' => get_queried_object()
 			)
 		);
 	}

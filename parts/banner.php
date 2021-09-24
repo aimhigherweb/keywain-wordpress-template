@@ -18,6 +18,10 @@
 		$image = get_post_thumbnail_id($page_id);
 	}
 
+	if($category && $image == null) {
+		$image = get_post_thumbnail_id(get_option('page_for_posts'));
+	}
+
 ?>
 
 <?php if($image != null): ?>

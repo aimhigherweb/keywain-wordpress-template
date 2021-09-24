@@ -3,7 +3,7 @@
 
 	$page = get_option('page_for_posts');
 	$page_data = get_page($page);	
-	$archive = get_the_tags()[0];
+	$archive = get_queried_object();
 	$blog = get_permalink( get_option( 'page_for_posts' ) );
 	$tags = get_tags(array(
 		'hide_empty' => true,

@@ -37,7 +37,6 @@
 	if(has_post_thumbnail()) {
 		$class = $class . ' has_banner';
 	}
-
 ?>
 
 <!DOCTYPE html>
