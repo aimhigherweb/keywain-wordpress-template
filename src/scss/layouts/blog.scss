@@ -1,6 +1,7 @@
 .cats {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	max-width: 800px;
 	margin: 20px 0;
 	margin: 10px auto;
@@ -36,6 +37,10 @@
 		color: var.$primary;
 		text-transform: uppercase;
 	}
+
+	&.filter {
+		max-width: unset;
+	}
 }
 
 .tags {
@@ -46,6 +51,7 @@
 
 	&.filter {
 		justify-content: center;
+		max-width: unset;
 		margin: 20px auto 0;
 	}
 }
@@ -59,16 +65,25 @@
 }
 
 .post {
-	--border_width: 3px;
-
 	position: relative;
 	max-width: 300px;
-	margin: 25px auto;
-	padding: 20px;
-	border: 3px solid var.$grey;
+	margin: 30px auto;
 	text-align: left;
 
-	@include mixins.animate_border(var.$grey, var.$primary, var(--border_width));
+	.wrapper, .featured_image {
+		border-radius: 20px;
+		background: var.$white;
+		box-shadow: 0 10px 20px rgba(var.$neutral, 0.19), 0 6px 6px rgba(var.$neutral, 0.23)
+	}
+
+	.wrapper {
+		padding: 20px;
+	}
+
+	.featured_image {
+		overflow: hidden;
+		border-color: var.$primary;
+	}
 
 	h2 {
 		margin-top: 0;
@@ -87,18 +102,14 @@
 	}
 
 	&:hover {
-		border-color: var.$primary;
 
-		img {
-			border-color: var.$primary;
-		}
 	}
 
 	img {
 		position: relative;
 		z-index: -1;
-		max-width: calc(100% + 40px);
-		margin: -20px -20px 20px;
+		max-width: 100%;
+		margin: 0;
 	}
 
 	.block_link {
@@ -154,33 +165,19 @@
 	$image_size: 300px;
 
 	.post {
-		position: relative;
+		display: flex;
 		max-width: 800px;
-		padding-right: $image_size + 20px;
-		overflow: hidden;
 
 		img {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: $image_size;
-			height: calc(100%);
-			margin: 0;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 			object-position: center;
 		}
 
 		.featured_image {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
+			flex-shrink: 0;
 			width: $image_size;
-			height: calc(100%);
-			border: 3px solid var.$grey;
-
-			@include mixins.child_animate_border_start(var.$grey, var.$primary, var(--border_width));
 		}
 
 		.content {
@@ -192,18 +189,26 @@
 		}
 
 		&:hover {
-			.featured_image {
-				@include mixins.child_animate_border_end(var.$grey, var.$primary, var(--border_width));
+			.wrapper {
+				background: var.$primary;
+				color: var.$white;
+
+				h2, a {
+					color: inherit;
+				}
 			}
 		}
 
 		&:nth-child(2n) {
-			padding-right: 20px;
-			padding-left: $image_size + 20px;
+			.featured_image {
+				margin-right: 10px;
+			}
+		}
 
-			img, .featured_image {
-				right: auto;
-				left: 0;
+		&:nth-child(2n - 1) {
+			.featured_image {
+				order: 2;
+				margin-left: 10px;
 			}
 		}
 	}
@@ -213,28 +218,12 @@
 	$image_size: 350px;
 
 	.post {
-		--border_width: 5px;
-
-		padding: 50px;
-		padding-right: $image_size + 50px;
-		border-width: 5px;
-
-		img {
-			width: $image_size;
+		.wrapper {
+			padding: 50px;
 		}
 
 		.featured_image {
 			width: $image_size;
-			border-width: 5px;
-		}
-
-		&:nth-child(2n) {
-			padding-right: 50px;
-			padding-left: $image_size + 50px;
-
-			.feature_image {
-				border-width: 5px;
-			}
 		}
 	}
 
@@ -244,22 +233,8 @@
 				$image_size: 250px;
 				margin-right: -50px;
 
-				img {
-					width: $image_size;
-				}
-
 				.featured_image {
 					width: $image_size;
-				}
-
-				&:nth-child(2n - 1) {
-					padding-right: $image_size + 50px;
-					padding-left: 50px;
-				}
-
-				&:nth-child(2n) {
-					padding-right: 50px;
-					padding-left: $image_size + 50px;
 				}
 			}
 		}
@@ -270,24 +245,34 @@
 	$image_size: 400px;
 
 	.post {
-		padding-right: $image_size + 50px;
-		transition: max-width 1s linear;
-
-		img {
-			width: $image_size;
-		}
-
 		.featured_image {
+			z-index: 5;
 			width: $image_size;
-		}
+			transition: transform 0.5s linear;
+			pointer-events: none;
 
-		&:nth-child(2n) {
-			padding-left: $image_size + 50px;
+			img {
+				z-index: 1;
+				top: -15px;
+				left: -15px;
+				width: calc(100% + 30px);
+				max-width: unset;
+				height: calc(100% + 30px);
+				transition: transform 0.5s linear;
+				object-position: center;
+			}
 		}
 
 		&:hover {
-			max-width: 1200px;
-			transition: max-width 1s linear 0.2s;
+			.featured_image {
+				transform: rotate(5deg) scale(1.1);
+				border-width: 5px;
+				border-style: solid;
+
+				img {
+					transform: rotate(-5deg);
+				}
+			}
 		}
 	}
 
@@ -296,20 +281,8 @@
 			.post {
 				$image_size: 300px;
 
-				img {
-					width: $image_size;
-				}
-
 				.featured_image {
 					width: $image_size;
-				}
-
-				&:nth-child(2n - 1) {
-					padding-right: $image_size + 50px;
-				}
-
-				&:nth-child(2n) {
-					padding-left: $image_size + 50px;
 				}
 			}
 		}
@@ -321,23 +294,19 @@
 
 	.post {
 		max-width: 900px;
-		padding-right: $image_size + 50px;
-
-		img {
-			width: $image_size;
-		}
 
 		.featured_image {
 			width: $image_size;
 		}
 
-		&:nth-child(2n) {
-			margin-left: -50px;
-			padding-left: $image_size + 50px;
-		}
+		&:hover {
+			.featured_image {
+				transform: rotate(2deg) scale(1.05);
 
-		&:nth-child(2n - 1) {
-			margin-right: -50px;
+				img {
+					transform: rotate(-2deg);
+				}
+			}
 		}
 	}
 
@@ -345,22 +314,20 @@
 		&[data-booking] {
 			.post {
 				$image_size: 400px;
-
-				img {
-					width: $image_size;
-				}
+				margin-right: auto;
 
 				.featured_image {
 					width: $image_size;
 				}
 
-				&:nth-child(2n - 1) {
-					padding-right: $image_size + 50px;
-				}
+				&:hover {
+					.featured_image {
+						transform: rotate(5deg) scale(1.1);
 
-				&:nth-child(2n) {
-					margin-right: 0;
-					padding-left: $image_size + 50px;
+						img {
+							transform: rotate(-5deg);
+						}
+					}
 				}
 			}
 		}
@@ -373,20 +340,18 @@
 			.post {
 				$image_size: 500px;
 
-				img {
-					width: $image_size;
-				}
-
 				.featured_image {
 					width: $image_size;
 				}
 
-				&:nth-child(2n - 1) {
-					padding-right: $image_size + 50px;
-				}
+				&:hover {
+					.featured_image {
+						transform: rotate(2deg) scale(1.05);
 
-				&:nth-child(2n) {
-					padding-left: $image_size + 50px;
+						img {
+							transform: rotate(-2deg);
+						}
+					}
 				}
 			}
 		}

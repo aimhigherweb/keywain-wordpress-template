@@ -17,6 +17,7 @@
 	}
 
 	&:after {
+		content: '';
 		position: fixed;
 		z-index: -10;
 		top: 50%;
@@ -24,8 +25,10 @@
 		width: 100vw;
 		height: 100vh;
 		transform: translateX(-50%) translateY(-50%);
-		opacity: 0.7;
+		transition: opacity 0s steps(1, end);
+		opacity: 0;
 		background: var.$black;
+		pointer-events: none;
 	}
 
 	.toggle {
@@ -79,6 +82,11 @@
 
 		&:before, &:after {
 			content: '';
+		}
+
+		&:after {
+			transition: opacity 0.1s linear 0.15s;
+			opacity: 0.7;
 		}
 
 		.content {

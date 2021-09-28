@@ -14,7 +14,7 @@
 	); ?>
 </h1>
 
-<ul class="cats">
+<ul class="cats filter">
 	<li class="cat-title">Filter by Category</li>
 	<li>
 		<a 

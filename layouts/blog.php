@@ -11,7 +11,7 @@
 	
 <?php echo apply_filters('the_content', $page_data->post_content); ?>
 
-<ul class="cats">
+<ul class="cats filter">
 	<li class="cat-title">Filter by Category</li>
 	<li>
 		<a 

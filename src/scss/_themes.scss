@@ -127,8 +127,6 @@
 	}
 
 	.service {
-		@include mixins.animate_border(var.$grey, $primary);
-
 		svg {
 			color: $primary;
 		}
@@ -149,10 +147,19 @@
 	}
 
 	.post {
-		@include mixins.animate_border(var.$grey, $primary, var(--border_width));
+		.featured_image {
+			border-color: $primary;
+		}
 
 		&:hover {
-			border-color: $primary;
+			.wrapper {
+				background: $primary;
+				color: var.$white;
+
+				h2, a {
+					color: inherit;
+				}
+			}
 		}
 	}
 
@@ -259,45 +266,11 @@
 		}
 	}
 
-	@media(min-width: 40em) {
-		.post {
-			&:nth-child(2n) {
-				&:hover {
-					img {
-						border-color: $primary;
-					}
-				}
-			}
-
-			.featured_image {
-				@include mixins.child_animate_border_start(var.$grey, $primary, var(--border_width));
-			}
-
-			&:hover {
-				.featured_image {
-					@include mixins.child_animate_border_end(var.$grey, $primary, var(--border_width));
-				}
-			}
-		}
-	}
-
 	@media(min-width: 50em) {
 		.header {
 			nav {
 				ul {
 					color: $primary;
-				}
-			}
-		}
-	}
-
-	@media(min-width: 60em) {
-		.post {
-			@include mixins.animate_border(var.$grey, $primary, var(--border_width), 1s);
-
-			&:hover {
-				.featured_image {
-					@include mixins.child_animate_border_end(var.$grey, $primary, var(--border_width), 1s);
 				}
 			}
 		}

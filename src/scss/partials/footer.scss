@@ -46,6 +46,10 @@
 	}
 }
 
+.footer_widget {
+	margin-top: 20px;
+}
+
 @media(min-width: 40em) {
 	.footer {
 		display: flex;
@@ -93,6 +97,10 @@
 			}
 		}
 	}
+
+	.footer_widget {
+		margin-top: 50px;
+	}
 }
 
 $max_width: 1200px * (10/9);
@@ -100,5 +108,11 @@ $max_width: 1200px * (10/9);
 @media(min-width: $max_width) {
 	.footer {
 		padding: 50px calc(50vw - 600px);
+	}
+}
+
+@media(min-width: 80em) {
+	.footer_widget {
+		margin-top: 20px;
 	}
 }
