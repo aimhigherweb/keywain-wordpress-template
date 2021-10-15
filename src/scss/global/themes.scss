@@ -1,5 +1,6 @@
 @use '../themes.scss';
 @use '../variables.scss' as var;
+@use '../mixins.scss';
 
 body {
 	&[class*='theme_'] {
@@ -10,6 +11,14 @@ body {
 
 			a {
 				color: inherit;
+			}
+		}
+
+		h1, h2, h3, h4, h5 {
+			&.has-text-color {
+				@include mixins.gutenberg_text_colours;
+
+				color: var(--text_colour);
 			}
 		}
 	}

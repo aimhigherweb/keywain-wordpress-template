@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
 const stylelint = require('gulp-stylelint')
 const zip = require('gulp-zip')
+const replace = require('gulp-replace')
 
 //File Paths
 const sassPartials = 'src/scss/**/*.scss'
@@ -99,6 +100,10 @@ task('buildFiles', () => {
 })
 
 task('zip' , () => {
+	src('./dist/partials/layout.php')
+		.pipe(replace('/style.css', `/style.css?v${new Date().valueOf()}`))
+		.pipe(replace(`<?php get_template_part('partials/dev-styles'); ?>`, ''))
+		.pipe(dest('./dist/partials/'))
 	return src('./dist/**')
 		.pipe(zip(`${process.env.THEME_NAME}.zip`))
 		.pipe(dest('.'))

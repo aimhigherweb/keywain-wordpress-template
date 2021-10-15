@@ -33,7 +33,11 @@ h1, h2, h3, h4, h5 {
 		}
 	}
 
-	@include mixins.gutenberg_text_colours;
+	&.has-text-color {
+		@include mixins.gutenberg_text_colours;
+
+		color: var(--text_colour);
+	}
 }
 
 h1, h2 {

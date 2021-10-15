@@ -3,6 +3,10 @@
 	margin: 20px auto;
 	padding: 20px 0;
 
+	&:first-child {
+		margin-top: 0;
+	}
+
 	&:last-child {
 		margin-bottom: -20px;
 	}
@@ -198,6 +202,10 @@
 		margin: 50px auto;
 		padding: 50px 0;
 
+		&:first-child {
+			margin-top: 0;
+		}
+
 		&:before {
 			width: 110vw;
 			margin-left: 95px;
@@ -235,6 +243,10 @@
 	.team {
 		margin: 50px 0;
 		padding: 100px 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
 
 		&:last-child {
 			margin-bottom: -70px;
