@@ -113,7 +113,7 @@
 		</main>
 
 		<?php get_template_part('partials/footer'); ?>
-
+		<?php wp_footer(); ?>
 		<script src="<?php echo get_template_directory_uri(); ?>/src/js/main.js"></script>
 	</body>
 </html>

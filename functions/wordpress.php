@@ -228,7 +228,7 @@
         $svg_fetch = wp_remote_get($svg_path);
         $svg_body = '';
 
-        if($svg_fetch['response']['code'] == '200'){
+        if(is_array($svg_fetch) && $svg_fetch['response']['code'] == '200'){
             $svg_body = wp_remote_retrieve_body($svg_fetch);
         }
        
