@@ -8,12 +8,6 @@
 
 ?>
 
-<h1>
-	<?php echo single_cat_title(
-		get_the_title($page) . ' - '
-	); ?>
-</h1>
-
 <ul class="cats filter">
 	<li class="cat-title">Filter by Category</li>
 	<li>

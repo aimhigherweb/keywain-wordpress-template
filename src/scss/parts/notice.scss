@@ -15,12 +15,6 @@
 	}
 }
 
-main {
-	.notice {
-		margin-top: -20px;
-	}
-}
-
 @media(min-width: 40em) {
 	.notice {
 		margin-left: -50px;
@@ -30,7 +24,6 @@ main {
 @media(min-width: 50em) {
 	main {
 		.notice {
-			margin-top: -70px;
 			padding-right: 300px;
 		}
 	}

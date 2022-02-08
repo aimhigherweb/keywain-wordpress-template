@@ -5,9 +5,6 @@
 	$page_data = get_page($page);
 	$blog = get_permalink( get_option( 'page_for_posts' ) );
 ?>
-
-
-<h1 class="post-title"><?php echo get_the_title($page); ?></h1>
 	
 <?php echo apply_filters('the_content', $page_data->post_content); ?>
 

@@ -13,12 +13,6 @@
 	));
 ?>
 
-<h1>
-	<?php echo single_tag_title(
-		get_the_title($page) . ' Tags - '
-	); ?>
-</h1>
-
 <ul class="tags filter">
 	<li class="cat-title">Filter by Tag</li>
 	<li>

@@ -80,11 +80,7 @@
 			id="main" 
 			<?php if(is_active_sidebar('booking')) {echo 'data-booking';} ?>
 		>
-			<?php if (is_active_sidebar('notice')) : ?>
-				<div class="notice">
-					<?php dynamic_sidebar('notice'); ?>
-				</div>
-			<?php endif; ?>
+			
 
 			<?php if (is_active_sidebar('booking')) : ?>
 				<?php get_template_part('parts/booking'); ?>
@@ -100,6 +96,8 @@
 					)
 				); ?>
 			<?php endif; ?>
+
+			<?php get_template_part('parts/title'); ?>
 
 			<?php get_template_part('layouts/' . $template); ?>
 
